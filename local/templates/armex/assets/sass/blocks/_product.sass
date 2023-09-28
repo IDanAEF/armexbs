@@ -1,0 +1,119 @@
+.product
+    &__promo 
+        margin-top: 60px
+        .container
+            display: flex
+            justify-content: space-between
+            padding-right: 4%
+        &-text 
+            max-width: 640px
+        &-image 
+            max-width: 350px
+            max-height: 400px
+            margin-left: 20px
+            &.mobile 
+                display: none
+        h1, &-price 
+            margin-bottom: 20px
+        &-descr 
+            margin-bottom: 40px
+        &-buttons 
+            display: flex
+            align-items: center
+            button 
+                margin-right: 30px
+                &:last-child
+                    margin-right: 0 !important
+    &__parts
+        margin-bottom: 80px
+        .container  
+            display: flex
+            align-items: center
+            justify-content: center
+        .button 
+            margin-right: 20px
+            &:last-child
+                margin-right: 0 !important
+    &__types
+        &-list 
+            display: grid
+            grid-template: auto / 1fr 1fr
+            gap: 24px
+        &-price 
+            display: none
+        &-item 
+            border-radius: 15px
+            background: #FFF7C5
+            padding: 25px 30px 30px 40px
+            display: flex
+            flex-direction: column
+            button 
+                margin: auto auto 0
+        &-descr 
+            margin-bottom: 30px
+        &-head 
+            display: flex
+            justify-content: space-between
+            margin-bottom: 15px
+            .price 
+                margin-left: 20px
+    &__clients
+        &-list 
+            display: grid
+            grid-template: auto / repeat(4, 1fr)
+            gap: 24px
+        &-item 
+            border-radius: 10px
+            background: #F9F9F9
+            height: 149px
+            display: flex
+            align-items: center
+            justify-content: center
+            img 
+                max-width: 75%
+                max-height: 75%
+                object-fit: contain
+    &__consult
+        .container
+            display: grid
+            grid-template: auto / 1fr 1fr
+            gap: 20px
+        h2 
+            margin-bottom: 60px
+        &-contact 
+            display: flex
+            justify-content: space-between
+            .links 
+                display: flex
+                flex-direction: column
+                a 
+                    display: flex
+                    align-items: center
+                    margin-bottom: 25px
+                    &:last-child
+                        margin-bottom: 0 !important
+                    img 
+                        margin-right: 18px
+        .footer__speak
+            margin-left: 20px
+            &-item 
+                border: 1px solid #CDCDCD
+        button 
+            margin-right: 0 !important
+    &__banner 
+        .container
+            padding: 50px
+            border-radius: 15px
+            background: linear-gradient(107deg, #B2BEFF 14.58%, rgba(52, 206, 255, 0.71) 49.83%, rgba(117, 148, 255, 0.81) 95.11%)
+        .button 
+            margin: 0 !important
+        h2
+            max-width: 585px
+            margin-bottom: 30px
+            text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.10)
+        img 
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            right: 8%
+            max-width: 480px

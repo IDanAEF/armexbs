@@ -1,0 +1,6 @@
+*.rar
+.idea
+node_modules
+upload
+bitrix
+package-lock.json

@@ -1,0 +1,101 @@
+.modal
+    border-radius: 15px
+    background: #FFF
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.10)
+    position: fixed
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    padding: 60px
+    z-index: 11
+    width: 700px
+    max-width: 91vw
+    max-height: 98vh
+    overflow: auto
+    overflow-x: hidden
+    scrollbar-width: thin
+    scrollbar-color: $base-color #fff
+    opacity: 0
+    visibility: hidden
+    transition: 0.4s all
+    display: flex
+    flex-direction: column
+    align-items: center
+    &.active
+        opacity: 1
+        visibility: visible
+    &::-webkit-scrollbar
+        width: 5px
+        height: 5px
+    &::-webkit-scrollbar-track
+        background: #fff
+    &::-webkit-scrollbar-thumb 
+        background-color: $base-color 
+    &-close 
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 20px
+        height: 20px
+        position: absolute
+        right: 30px
+        top: 30px
+        cursor: pointer
+        &::before, &::after
+            content: ''
+            height: 3px
+            width: 100%
+            background: $base-color
+            position: absolute
+        &::before
+            transform: rotate(45deg)
+        &::after
+            transform: rotate(-45deg)
+.cookies-modal
+    border-radius: 10px
+    background: #FFF
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.09)
+    position: fixed
+    z-index: 9 
+    bottom: 30px
+    left: 50%
+    transform: translateX(-50%)
+    width: 890px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 25px 35px
+    max-width: 91vw
+    transition: 0.4s all
+    opacity: 0
+    visibility: hidden
+    &.active
+        opacity: 1
+        visibility: visible
+    button 
+        margin-left: 25px
+.feedback-modal
+    .main__feedback
+        &-top 
+            margin-bottom: 30px
+            flex-direction: column
+            text-align: center
+            h2 
+                margin-right: 0
+                margin-bottom: 9px
+        &-form 
+            flex-direction: column
+            width: 100%
+            max-width: 508px
+            &-col
+                width: 100%
+                margin-bottom: 20px
+                &:last-child
+                    margin-bottom: 0 !important
+                span 
+                    margin-bottom: 10px
+.success-modal
+    padding: 50px 40px
+    text-align: center
+    h3 
+        margin-bottom: 10px

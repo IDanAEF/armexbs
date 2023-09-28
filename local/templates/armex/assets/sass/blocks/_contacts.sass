@@ -1,0 +1,42 @@
+.contacts
+    &__head 
+        position: relative
+        .container
+            display: grid
+            grid-template: auto / 1fr 1fr 
+            gap: 20px
+    &__main 
+        display: grid
+        grid-template: auto / 1fr 1fr 
+        gap: 40px
+    &__info 
+        display: flex
+        flex-direction: column
+        & > *
+            margin-bottom: 25px
+            display: flex
+            align-items: center
+            img 
+                margin-right: 19px
+                height: 28px
+                max-width: 28px
+            &:last-child
+                margin-bottom: 0 !important
+    &__social 
+        .footer__speak
+            margin-bottom: 65px
+            &-item 
+                border: 1px solid #828282
+                width: 89px
+        &-items 
+            margin-top: 15px
+            display: flex
+            align-items: center
+            a 
+                margin-right: 36px
+                &:last-child
+                    margin-top: 0 !important
+    #map 
+        border-radius: 15px
+        overflow: hidden
+        height: 613px

@@ -1,0 +1,130 @@
+.catalog
+    &__list 
+        margin: 60px 0px 120px
+        button 
+            margin: 35px auto 0px
+    &__items
+        display: grid
+        grid-template: auto / repeat(4, 1fr)
+        gap: 32px 25px
+    &__item 
+        border-radius: 15px
+        background: #F9F9F9
+        padding: 20px 20px 30px
+        display: flex
+        flex-direction: column
+        align-items: center
+        img 
+            max-width: 219px
+            max-height: 237px
+            object-fit: contain
+        h4 
+            min-height: 48px
+            margin: 20px 0px 30px
+            width: 100%
+        .text
+            display: flex
+            flex-direction: column
+            align-items: center
+        span 
+            margin-top: auto
+            margin-bottom: 10px
+    &__usage 
+        margin-bottom: 120px
+        .container
+            display: grid
+            grid-template: auto / repeat(4, 1fr)
+            gap: 24px 20px
+        &-item 
+            border-radius: 15px
+            background: #F9F9F9
+            padding: 15px 22px
+            text-align: center
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            img 
+                margin-bottom: 19px
+                max-width: 109px
+                max-height: 93px
+                object-fit: contain
+    &__filter
+        margin-top: 30px
+        border-bottom: 3px solid $base-color
+        .container
+            display: flex
+            justify-content: space-between
+        &-control
+            // width: 48%
+            width: auto
+            max-width: 450px
+            position: relative
+            // &:last-child
+            //     max-width: 370px
+            &:last-child
+                margin-right: 0 !important
+        &-head 
+            display: flex
+            align-items: center
+            justify-content: space-between
+            padding: 15px
+            cursor: pointer
+            position: relative
+            & > svg 
+                margin-left: 10px
+                transition: 0.4s transform
+                pointer-events: none
+            .name
+                pointer-events: none
+                svg 
+                    display: none
+            &.active
+                color: $base-color
+                svg 
+                    path 
+                        fill: $base-color
+                & > svg 
+                    transform: rotate(180deg)
+        &-list 
+            list-style-type: none 
+            position: absolute
+            left: 0
+            top: calc(100% + 3px)
+            width: 100%
+            z-index: 3
+            background: #fff
+            border-radius: 5px
+            box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.10)
+            opacity: 0
+            visibility: hidden
+            transition: 0.4s all
+            &.active
+                opacity: 1
+                visibility: visible
+            li 
+                &.no-a, a
+                    padding: 15px 35px 15px 15px
+                    transition: 0.3s all
+                    cursor: pointer
+                    position: relative
+                    display: block
+                    &:hover 
+                        background: #F4F4F4
+                    &::after 
+                        content: ''
+                        position: absolute
+                        top: 50%
+                        right: 10px
+                        width: 21px
+                        height: 21px
+                        transform: translateY(-50%)
+                        transition: 0.3s all 
+                        opacity: 0
+                        visibility: hidden
+                        background: url('../images/check.svg') center center/contain no-repeat
+                &.active
+                    &.no-a, a
+                        &::after
+                            opacity: 1
+                            visibility: visible

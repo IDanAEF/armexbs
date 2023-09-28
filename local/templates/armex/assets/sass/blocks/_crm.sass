@@ -1,0 +1,143 @@
+.crm
+    &__promo 
+        margin-bottom: 120px
+        height: 614px
+        background: linear-gradient(195deg, #F6FFFF 10.24%, rgba(234, 248, 255, 0.77) 37.2%, rgba(215, 245, 255, 0.00) 83.54%)
+        padding: 25px 0px
+        display: flex
+        position: relative
+        align-items: center
+        .container 
+            position: static
+        &-text 
+            max-width: 530px
+        h1 
+            margin-bottom: 40px
+        button, .button 
+            margin-top: 40px
+        img 
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            right: 17%
+            max-width: 56vw
+            max-height: 530px
+            pointer-events: none
+    &__instr
+        .grm
+            &__point
+                padding: 0
+                background: none
+            &__points 
+                margin-bottom: 60px
+                .container 
+                    gap: 50px 30px
+    &__abilit
+        ul 
+            list-style-type: none 
+            li 
+                padding-left: 23px
+                margin-bottom: 20px
+                position: relative
+                &:last-child
+                    margin-bottom: 0 !important
+                &::before
+                    content: ''
+                    position: absolute
+                    left: 0
+                    top: 50%
+                    transform: translateY(-50%)
+                    background: #6CD1E8
+                    width: 12px
+                    height: 12px
+                    border-radius: 100%
+    &__actions
+        .container
+            display: grid
+            grid-template: auto / repeat(2, 526px)
+            justify-content: center
+            gap: 72px
+        &-item 
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            justify-content: space-between
+        &-preview 
+            position: relative
+            height: 285px
+            width: 100%
+            border-radius: 15px
+            background: #D9D9D9
+            overflow: hidden
+            margin-top: 15px
+    &__price
+        &-list 
+            display: grid
+            grid-template: auto / repeat(4, 1fr)
+            gap: 24px
+            scrollbar-width: thin
+            scrollbar-color: $base-color #D9D9D9
+            &::-webkit-scrollbar
+                width: 8px
+                height: 8px
+            &::-webkit-scrollbar-track
+                background: #D9D9D9
+                border-radius: 5px
+            &::-webkit-scrollbar-thumb 
+                background-color: $base-color 
+                border-radius: 5px
+        &-item 
+            border-radius: 15px
+            overflow: hidden
+            background: #EDF9FF
+            &.green 
+                background: #E3FFE7
+            &-head 
+                padding: 17px 26px
+                min-height: 135px
+                text-align: center
+                background: #DDF3FF
+                &.green 
+                    background: #D2FFD9
+                b 
+                    display: block
+                    margin-bottom: 10px
+                    font-weight: 500
+            &-body 
+                padding: 6px 26px 17px
+                .users, .price, .for, .size
+                    text-align: center
+                .price 
+                    margin: 10px 0px 5px
+                .size 
+                    margin: 16px 0px 27px
+            &-char 
+                margin-bottom: 34px
+                &:last-child
+                    margin-bottom: 0 !important
+                &-sub 
+                    list-style-type: none
+                    margin-top: 5px
+                    li 
+                        margin-bottom: 5px
+                        &:last-child
+                            margin-bottom: 0 !important
+                &-name 
+                    font-weight: 400
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                    .rounds 
+                        display: flex
+                        align-items: center
+                        margin-left: 5px
+                        span 
+                            width: 12px
+                            height: 12px
+                            border-radius: 100%
+                            margin-right: 6px
+                            border: 2px solid #6CD1E8
+                            &.active 
+                                background: #6CD1E8
+                            &:last-child
+                                margin-right: 0 !important
