@@ -48,7 +48,7 @@
     <section class="main__results main__block">
         <div class="container">
             <div class="main__results-list text_fz20">
-                <a href="/benefit/#20years" class="main__results-item">
+                <a href="/benefit/#years" class="main__results-item">
                     <img src="<?=$beforePath?>result1.png" alt="" class="img_bg">
                     <div class="icon">
                         <img src="<?=$beforePath?>result-icon1.png" alt="">
@@ -105,7 +105,7 @@
             </a>
         </div>
     </section>
-    <section class="main__try main__block mobile-slider">
+    <section class="main__try main__block slider mobile-only">
         <div class="container">
             <h2 class="text_fz36 text_fw600 text_upper text_red">Попробуйте бесплатно</h2>
             <div class="main__try-list text_fz18 text_fw300 mobile-slider-list">
@@ -160,156 +160,63 @@
     <section class="demo__banner short gold main__block">
         <div class="container">
             <div class="demo__banner-text text_fz20">
-                <h2 class="text_fz32 text_fw600 text_upper text_red">Тест-драйв продуктов 1С на 30 дней</h2>
+                <h2 class="text_fz32 text_fw600 text_upper text_red">поможем с выбором 1с</h2>
                 Если вы не знаете, какой продукт подойдет вам больше, наши специалисты проведут для вас консультацию и подберут продукт с учетом особенностей бизнеса
             </div>
             <button class="text_fz20 text_fw700 body-click-target" data-content="feedback-choise">Подобрать продукт 1С</button>
         </div>
     </section>
     <section class="main__products main__block">
+        <?php
+            $cats = CIBlockSection::GetList(
+                ["SORT"=>"ASC"],
+                ['IBLOCK_ID' => 47, 'SECTION_ID' => 136, 'UF_MAIN' => 1],
+                false,
+                ['ID', 'NAME', 'PICTURE', 'DESCRIPTION'],
+                false
+            );
+        ?>
         <div class="container">
             <h2 class="text_fz36 text_fw400">Продукты 1С</h2>
             <div class="main__products-list text_fz18 text_fw300">
-                <a href="#" class="main__products-item">
-                    <img src="<?=$beforePath?>product1.png" alt="">
-                    <div class="shape"></div>
-                    <div class="main__products-left">
-                        <h3 class="text_fz24 text_fw600 text_upper text_red">Торговый учёт и продажи</h3>
-                        <span>
-                            Позволяет автоматизировать задачи оперативного и <br>управленческого учета
-                        </span>
-                    </div>
-                    <div class="main__products-right text_fz20 text_red text_fw400">
-                        <span class="main__products-mark">
-                            1С:CRM
-                        </span>
-                        <span class="main__products-mark">
-                            1С:Управление торговлей
-                        </span>
-                        <span class="main__products-mark">
-                            1С:Розница
-                        </span>
-                    </div>
-                </a>
-                <a href="#" class="main__products-item">
-                    <img src="<?=$beforePath?>product2.png" alt="">
-                    <div class="shape"></div>
-                    <div class="main__products-left">
-                        <h3 class="text_fz24 text_fw600 text_upper text_red">Комплексная автоматизация</h3>
-                        <span>
-                            Подходит для малого и среднего бизнеса, ведущего <br>
-                            сложные процессы бюджетирования, продаж, <br>
-                            планирования закупок и производства
-                        </span>
-                    </div>
-                    <div class="main__products-right text_fz20 text_red text_fw400">
-                        <span class="main__products-mark">
-                            1С:Комплексная автоматизация
-                        </span>
-                        <span class="main__products-mark">
-                            1С:ERP
-                        </span>
-                        <span class="main__products-mark">
-                            1С:Управление нашей фирмой
-                        </span>
-                        <span class="main__products-mark">
-                            1С:Корпорация
-                        </span>
-                        <span class="main__products-mark">
-                            1С:Комплект на 5 пользователей
-                        </span>
-                    </div>
-                </a>
-                <a href="#" class="main__products-item">
-                    <img src="<?=$beforePath?>product3.png" alt="">
-                    <div class="shape"></div>
-                    <div class="main__products-left">
-                        <h3 class="text_fz24 text_fw600 text_upper text_red">Комплекты 1с</h3>
-                        <span>
-                        Объединяет несколько продуктов 1С в одно эффективное <br>
-                        решение для автоматизации полного спектра задач компании
-                        </span>
-                    </div>
-                    <div class="main__products-right text_fz20 text_red text_fw400">
-                        <span class="main__products-mark">
-                            ERP + Документооборот
-                        </span>
-                        <span class="main__products-mark">
-                            Комплект прикладных решений
-                        </span>
-                    </div>
-                </a>
-                <a href="#" class="main__products-item">
-                    <img src="<?=$beforePath?>product4.png" alt="">
-                    <div class="shape"></div>
-                    <div class="main__products-left">
-                        <h3 class="text_fz24 text_fw600 text_upper text_red">Документооборот</h3>
-                        <span>
-                            Упорядочивает взаимодействие между сотрудниками, отслеживает <br>
-                            рабочее время, реализует учёт документов и поддерживает <br>
-                            многопользовательскую работу в локальной сети и онлайн
-                        </span>
-                    </div>
-                    <div class="main__products-right text_fz20 text_red text_fw400">
-                        <span class="main__products-mark">
-                            1C:Документооборот
-                        </span>
-                    </div>
-                </a>
-                <a href="#" class="main__products-item">
-                    <img src="<?=$beforePath?>product5.png" alt="">
-                    <div class="shape"></div>
-                    <div class="main__products-left">
-                        <h3 class="text_fz24 text_fw600 text_upper text_red">Управленческий учёт и МСФО</h3>
-                        <span>
-                            Автоматизирует систему показателей, процессы <br>
-                            бюджетирования, бизнес-анализа, корпоративного контроля и учета
-                        </span>
-                    </div>
-                    <div class="main__products-right text_fz20 text_red text_fw400">
-                        <span class="main__products-mark">
-                            1С:Управление холдингом
-                        </span>
-                    </div>
-                </a>
-                <a href="#" class="main__products-item">
-                    <img src="<?=$beforePath?>product6.png" alt="">
-                    <div class="shape"></div>
-                    <div class="main__products-left">
-                        <h3 class="text_fz24 text_fw600 text_upper text_red">Бухгалтерский и налоговый учёт</h3>
-                        <span>
-                            Позволяет наладить понятный учет в соответствии с <br>
-                            законодательством и потребностями бизнеса, экономить время <br>
-                            при расчетах налогов, оформлении документов и хозяйственных операций,
-                        </span>
-                    </div>
-                    <div class="main__products-right text_fz20 text_red text_fw400">
-                        <span class="main__products-mark">
-                            1С:Бухгалтерия 
-                        </span>
-                        <span class="main__products-mark">
-                            1С:Упрощенка
-                        </span>
-                    </div>
-                </a>
-                <a href="#" class="main__products-item">
-                    <img src="<?=$beforePath?>product7.png" alt="">
-                    <div class="shape"></div>
-                    <div class="main__products-left">
-                        <h3 class="text_fz24 text_fw600 text_upper text_red">Зарплата и кадровый учет</h3>
-                        <span>
-                            Автоматизирует все основные процессы управления <br>
-                            персоналом, а также процессы кадрового учета, расчета <br>
-                            зарплаты, планирования расходов на оплату труда, <br>
-                            исчисления НДФЛ и страховых взносов.
-                        </span>
-                    </div>
-                    <div class="main__products-right text_fz20 text_red text_fw400">
-                        <span class="main__products-mark">
-                            1С:ЗУП 8
-                        </span>
-                    </div>
-                </a>
+                <?php
+                    while ($cat = $cats->Fetch()) {
+                        $products = CIBlockSection::GetList(
+                            ["SORT"=>"ASC"],
+                            ['IBLOCK_ID' => 48, 'UF_CAT' => $cat['ID']],
+                            false,
+                            ['ID', 'NAME'],
+                            false
+                        );
+                        ?>
+                        <div class="main__products-item">
+                            <img src="<?=CFile::GetPath($cat['PICTURE'])?>" alt="">
+                            <div class="shape"></div>
+                            <div class="main__products-left">
+                                <h3 class="text_fz24 text_fw600 text_upper text_red">
+                                    <a href="/catalog/?cat=<?=$cat['ID']?>">
+                                        <?=$cat['NAME']?>
+                                    </a>
+                                </h3>
+                                <span>
+                                    <?=$cat['DESCRIPTION']?>
+                                </span>
+                            </div>
+                            <div class="main__products-right text_fz20 text_red text_fw400">
+                                <?php
+                                    while ($product = $products->Fetch()) {
+                                        ?>
+                                        <a href="/catalog/product<?=$product['ID']?>/" class="main__products-mark">
+                                            <?=$product['NAME']?>
+                                        </a>
+                                        <?php
+                                    }
+                                ?>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                ?>
             </div>
             <a href="/catalog/" class="button text_fz20">
                 Смотреть весь каталог
@@ -317,7 +224,7 @@
             </a>
         </div>
     </section>
-    <section class="main__reviews main__block mobile-slider">
+    <section class="main__reviews main__block slider mobile-only">
         <div class="container">
             <h2 class="text_fz36 text_fw400">Отзывы</h2>
             <div class="main__reviews-list mobile-slider-list">
@@ -370,7 +277,7 @@
             </a>
         </div>
     </section>
-    <section class="main__cases main__block mobile-slider">
+    <section class="main__cases main__block slider mobile-only">
         <div class="container">
             <?php
                 $cases = CIBlockElement::GetList(

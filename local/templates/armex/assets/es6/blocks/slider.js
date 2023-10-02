@@ -5,12 +5,15 @@ const slider = () => {
         sliderField.forEach(slider => {
             let sliderTrack = slider.querySelector('.slider-track'),
                 sliderList = slider.querySelector('.slider-list'),
-                slides = slider.querySelectorAll('.slide'),
+                slides = slider.querySelectorAll('.slider-item'),
+                sliderDots = slider.querySelector('.slider-dots'),
+                sliderRight = slider.querySelector('.slider-right'),
+                sliderLeft = slider.querySelector('.slider-left'),
                 slideWidth = 0,
-                slideRight = slider.querySelector('.right'),
-                slideLeft = slider.querySelector('.left'),
                 slideIndex = 0,
                 slidesCount = slides.length;
+
+            let sliderDotsItems;
 
             const getVisCount = () => {
                 if (window.innerWidth <= 576 && slider.getAttribute('data-mob-vis')) {
@@ -27,6 +30,9 @@ const slider = () => {
             };
 
             const slide = () => {
+                sliderDotsItems && sliderDotsItems.forEach(item => item.classList.remove('active'));
+
+                sliderDotsItems && sliderDotsItems[slideIndex].classList.add('active');
                 sliderTrack.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
             }
 
@@ -41,9 +47,29 @@ const slider = () => {
             }
 
             const setSlideWidth = () => {
-                //slideWidth = slides[0].offsetWidth + +window.getComputedStyle(sliderTrack).gridColumnGap.replace('px', '');
                 slideWidth = slides[0].offsetWidth + +window.getComputedStyle(slides[0]).marginRight.replace('px', '');
             }
+
+            const setDots = () => {
+                if (!sliderDotsItems && sliderDots) {
+                    for(let i = 0; i < slidesCount; i++) {
+                        sliderDots.innerHTML += '<span></span>';
+                    }
+
+                    sliderDotsItems = sliderDots.querySelectorAll('span');
+                    sliderDotsItems[0].classList.add('active');
+
+                    sliderDotsItems.forEach((dot, i) => {
+                        dot.addEventListener('click', () => {
+                            slideIndex = i;
+        
+                            slide();
+                        });
+                    });
+                }
+            }
+
+            setDots();
 
             sliderTrack.style.transition = 'transform 0.5s ease 0s';
 
@@ -52,10 +78,14 @@ const slider = () => {
             let startPos = 0;
         
             sliderList.addEventListener('touchstart', (e) => {
+                if (slider.classList.contains('mobile-only') && window.innerWidth > 576) return;
+
                 startPos = e.changedTouches[0].screenX;
             });
         
             sliderList.addEventListener('touchend', (e) => {
+                if (slider.classList.contains('mobile-only') && window.innerWidth > 576) return;
+
                 if (startPos - e.changedTouches[0].screenX > 50) {
                     moveRight();
                 } else if (startPos - e.changedTouches[0].screenX < -50) {
@@ -63,10 +93,8 @@ const slider = () => {
                 }
             });
 
-            document.body.addEventListener('click', (e) => {
-                if (e.target == slideRight) moveRight();
-                if (e.target == slideLeft) moveLeft();
-            });
+            sliderRight.addEventListener('click', moveRight);
+            sliderLeft.addEventListener('click', moveLeft);
 
             window.addEventListener("resize", () => {
                 setSlideWidth();

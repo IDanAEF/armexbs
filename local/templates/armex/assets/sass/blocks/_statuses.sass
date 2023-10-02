@@ -1,0 +1,49 @@
+.statuses
+    &__list
+        h2 
+            display: flex
+            align-items: center
+            img
+                margin-right: 10px
+        .benefit
+            &__item 
+                align-items: center
+    &__look 
+        cursor: pointer
+    &__item
+        &-gallery
+            display: none
+    &__serts 
+        h2 
+            display: flex
+            align-items: center
+            img
+                margin-right: 10px
+        &-field 
+            padding: 0px 110px
+            position: relative
+        &-arrow 
+            position: absolute
+            z-index: 2
+            top: 50%
+            transform: translateY(-50%)
+            cursor: pointer
+            transition: 0.3s filter
+            &:hover 
+                filter: brightness(0.9)
+            &.left 
+                left: 42px
+                transform: translateY(-50%) rotate(180deg)
+            &.right 
+                right: 42px
+        &-list 
+            overflow: hidden
+        &-track 
+            width: fit-content
+            display: flex
+            align-items: center
+            img 
+                margin-right: 24px
+                max-width: 196px
+                min-width: 196px
+                cursor: pointer

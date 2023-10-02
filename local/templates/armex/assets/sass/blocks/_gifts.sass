@@ -1,0 +1,86 @@
+.gifts
+    .main 
+        &__promo 
+            &-page 
+                background: linear-gradient(107deg, #B2D5FF 14.58%, rgba(52, 206, 255, 0.71) 49.83%, rgba(117, 148, 255, 0.81) 95.11%)
+    &__parts 
+        .container
+            display: grid
+            grid-template: auto / 1fr 1fr
+            gap: 24px
+        &-col 
+            border-radius: 15px
+            background: #FFF7C5
+            padding: 30px
+        &-title 
+            display: flex
+            align-items: center
+            img 
+                margin-right: 20px
+        &-content 
+            p 
+                margin-bottom: 20px
+                &:last-child
+                    margin-bottom: 0 !important
+            ul, ol 
+                padding-left: 20px
+            .row 
+                display: grid
+                grid-template: auto / repeat(4, auto)
+                gap: 5px
+        &-list 
+            margin: 20px 0px 30px
+            list-style-type: none
+            .line 
+                border-bottom: 1px dotted #C1BA8D
+                flex: 1
+                margin: 0px 10px
+            li 
+                display: flex
+                align-items: flex-end
+                justify-content: space-between
+                margin-bottom: 20px
+                &:last-child
+                    margin-bottom: 0 !important
+                span 
+                    &:last-child
+                        min-width: 100px
+    &__clients 
+        .container 
+            display: grid
+            grid-template: auto / 1fr 1fr 
+            gap: 24px
+        &-cases, &-stats
+            margin: 20px 0px 45px
+        &-col
+            border-radius: 15px
+            border: 2px solid #FFF7C5
+            padding: 30px 25px
+        .button 
+            margin-top: 0 !important
+        &-stats 
+            display: flex
+            flex-wrap: wrap
+            gap: 20px
+            .mobile 
+                display: none
+            img 
+                border-radius: 10px
+                height: 135px
+                width: auto
+                border: 2px solid #F5F5F5
+        &-cases 
+            display: grid
+            grid-template: auto / repeat(3, 1fr)
+            gap: 20px
+            span 
+                border-radius: 10px
+                background: #F5F5F5
+                height: 135px
+                display: flex
+                align-items: center
+                justify-content: center
+                img 
+                    max-width: 90%
+                    max-height: 90%
+                    object-fit: contain

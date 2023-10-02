@@ -28,7 +28,7 @@
             <img src="<?=SITE_TEMPLATE_PATH?>/assets/before/av7.png" alt="">
             <h3 class="text_fz20 text_fw500">1000+ выполненых <br>проектов</h3>
         </a>
-        <a href="/benefit/#20years" class="catalog__usage-item">
+        <a href="/benefit/#years" class="catalog__usage-item">
             <img src="<?=SITE_TEMPLATE_PATH?>/assets/before/av8.png" alt="">
             <h3 class="text_fz20 text_fw500">20 лет работы <br>на рынке</h3>
         </a>

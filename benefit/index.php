@@ -119,7 +119,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="benefit__item" id="20years">
+                <div class="benefit__item" id="years">
                     <img src="<?=$beforePath?>benefit/benefit8.png" alt="" class="benefit__item-image">
                     <div class="benefit__item-info text_fz18">
                         <h3 class="benefit__item-title text_fz24 text_fw600 text_upper">
@@ -150,7 +150,7 @@
                             <img src="<?=$beforePath?>benefit/benefit10.png" alt="" class="benefit__item-image">
                             300+ реальных отзывов клиентов
                         </h3>
-                        За время работы компании мы завершили более 1000 проектов и получили более 300 подтвержденных отзывов от клиентов.
+                        За время работы компании мы завершили более 1000 проектов в различных отраслях.
                         <a href="/reviews/" class="button">
                             Смотреть отзывы
                             <img src="<?=$imgPath?>arrow-right.svg" alt="">

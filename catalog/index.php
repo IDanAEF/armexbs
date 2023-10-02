@@ -111,7 +111,7 @@
     <section class="demo__banner short gold main__block">
         <div class="container">
             <div class="demo__banner-text text_fz20">
-                <h2 class="text_fz32 text_fw600 text_upper text_red">Тест-драйв продуктов 1С на 30 дней</h2>
+                <h2 class="text_fz32 text_fw600 text_upper text_red">поможем с выбором 1с</h2>
                 Если вы не знаете, какой продукт подойдет вам больше, наши специалисты проведут для вас консультацию и подберут продукт с учетом особенностей бизнеса
             </div>
             <button class="text_fz20 text_fw700 body-click-target" data-content="feedback-choise">Подобрать продукт 1С</button>

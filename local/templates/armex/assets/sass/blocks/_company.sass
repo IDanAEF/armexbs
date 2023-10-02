@@ -1,0 +1,129 @@
+.company
+    &__empty, .catalog__usage 
+        margin-bottom: 0 !important
+    &__mission
+        border-radius: 15px
+        overflow: hidden
+        min-height: 225px
+        display: flex
+        flex-direction: column
+        align-items: center
+        position: relative
+        justify-content: center
+        padding: 40px
+        span 
+            margin-bottom: 30px
+        & > * 
+            &:not(img)
+                position: relative
+                z-index: 2
+    &__work 
+        &-list 
+            display: grid
+            grid-template: auto / repeat(3, 1fr)
+            gap: 22px
+        &-item 
+            position: relative
+            padding: 40px 30px
+            min-height: 393px
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            border-radius: 15px
+            overflow: hidden
+            span 
+                margin-bottom: 20px
+            .button 
+                margin-top: 0 !important
+            & > * 
+                &:not(img)
+                    position: relative
+                    z-index: 2
+    &__ways 
+        &-list 
+            display: grid
+            grid-template: auto / 1fr 1fr 
+            gap: 24px
+        &-title 
+            margin-bottom: 30px
+            display: flex
+            align-items: center
+            justify-content: center
+            img 
+                margin-right: 10px
+        &-item 
+            border-radius: 15px
+            background: #FFF7C5
+            padding: 30px 20px
+            ul 
+                list-style-type: none 
+                li 
+                    margin-bottom: 15px
+                    padding-left: 20px
+                    position: relative
+                    &::before
+                        content: ''
+                        position: absolute
+                        top: 4px
+                        left: 0
+                        width: 10px
+                        height: 10px
+                        background: $base-color
+                        border-radius: 100%
+                    &:last-child
+                        margin-bottom: 0 !important
+    &__clients
+        &-list 
+            display: grid
+            grid-template: auto / repeat(6, 1fr)
+            gap: 24px
+            span
+                border-radius: 10px
+                background: #F5F5F5
+                display: flex
+                align-items: center
+                justify-content: center
+                height: 147px
+                img 
+                    max-width: 90%
+                    max-height: 90%
+                    object-fit: contain
+    &__banner 
+        position: relative
+        border-radius: 15px
+        overflow: hidden
+        margin-bottom: 30px
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding: 40px
+        min-height: 192px
+        .button 
+            margin: 0 !important
+        span 
+            margin-right: 20px
+        &:last-child
+            margin-bottom: 0 !important
+        & > *
+            &:not(img) 
+                position: relative 
+                z-index: 2
+    &__stats
+        h2 
+            display: flex
+            align-items: center
+            justify-content: space-between
+            span 
+                margin-left: 20px
+                max-width: 640px
+                text-transform: none
+        &-list 
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+            gap: 20px 40px
+            span 
+                height: 147px
+                border-radius: 20px
+                border: 2px solid #F5F5F5
+                overflow: hidden

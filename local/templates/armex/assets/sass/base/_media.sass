@@ -1,3 +1,12 @@
+@media (min-width: 1400px)
+    .gifts
+        .main 
+            &__promo 
+                height: 537px
+                margin-bottom: 80px
+                &-image 
+                    max-width: 438px
+                    max-height: 361px
 @media (min-width: 992px) 
     .header
         &__menu 
@@ -7,6 +16,8 @@
                         & > a 
                             color: #1a1a1a !important
                             pointer-events: all
+                            &:hover 
+                                color: $base-color !important
                         .sub-menu, svg 
                             display: none !important
 @media (max-width: 1700px)
@@ -61,6 +72,25 @@
                 &-char 
                     &-name 
                         font-size: 18px
+    .statuses
+        &__serts 
+            &-field 
+                padding: 0px 55px
+            &-arrow 
+                &.left 
+                    left: 0
+                &.right 
+                    right: 0
+            &-track 
+                img 
+                    margin-right: 12px
+    .company
+        &__work 
+            &-item 
+                .button 
+                    width: 100%
+                    padding-left: 10px !important
+                    padding-right: 10px !important
     .main
         &__block 
             margin-bottom: 80px
@@ -103,9 +133,20 @@
             img 
                 right: 4%
                 max-width: 450px
+    .gifts 
+        &__clients 
+            &-cases, &-stats 
+                gap: 10px
+            &-stats 
+                img
+                    height: 119px
+            &-cases
+                span 
+                    height: 119px
     .footer
         &__logo 
-            margin-right: 40px
+            &-link
+                margin-right: 40px
         &__dop 
             &-item 
                 margin-right: 20px
@@ -172,6 +213,23 @@
                     width: 15px
     .block-top
         padding-top: 50px
+    .gifts 
+        &__clients 
+            .container 
+                grid-template: auto / 1fr 
+            &-stats 
+                img 
+                    height: 105px
+            &-cases 
+                span 
+                    height: 110px
+    .gallery
+        &__overlay
+            &-arrow 
+                width: 39px
+            .modal-close 
+                width: 26px
+                height: 26px
     table 
         tr 
             td
@@ -186,6 +244,27 @@
             margin-top: 50px
         &__item 
             margin-bottom: 30px
+    .company
+        &__mission
+            min-height: 190px
+        &__work 
+            &-item 
+                min-height: 280px
+        &__stats 
+            &-list 
+                gap: 20px 
+                span 
+                    height: 110px
+        &__clients
+            &-list 
+                gap: 10px
+        &__banner 
+            min-height: 160px
+    .statuses
+        &__serts 
+            &-track 
+                img 
+                    margin-right: 22px
     .state 
         &__comment 
             &-text 
@@ -326,7 +405,7 @@
                     min-width: 110px
         &__products
             &-right 
-                span 
+                span, a 
                     margin-left: 10px
                     margin-bottom: 10px
                     font-size: 14px
@@ -393,8 +472,9 @@
         &__dop 
             flex-direction: column-reverse
         &__logo 
-            margin-right: 0
-            margin-bottom: 20px
+            &-link
+                margin-right: 0
+                margin-bottom: 20px
         &__copy 
             margin-top: 30px
         &__speak
@@ -516,6 +596,21 @@
                 td 
                     img 
                         width: 110px
+    .clients
+        &__list
+            grid-template: auto / 1fr
+            gap: 20px
+    .gifts 
+        &__parts 
+            .container 
+                grid-template: auto / 1fr
+            &-title 
+                img 
+                    width: 38px
+                    margin-right: 15px
+        &__clients 
+            &-stats 
+                justify-content: center
     .crm
         &__price
             &-list 
@@ -529,6 +624,39 @@
                 max-height: 340px
             &-text 
                 max-width: 360px
+    .company
+        &__work 
+            &-list 
+                grid-template: auto / 1fr
+            &-item 
+                min-height: 220px
+        &__stats 
+            h2 
+                flex-direction: column
+                align-items: flex-start
+                span 
+                    margin-left: 0
+                    margin-top: 10px
+                    max-width: 100%
+            &-list 
+                span 
+                    height: 90px
+        &__clients 
+            &-list 
+                grid-template: auto / repeat(4, 1fr)
+                span 
+                    height: 110px
+    .statuses
+        &__serts 
+            &-track 
+                img 
+                    margin-right: 10px
+                    max-width: 151px
+                    min-width: 151px
+            &-arrow 
+                width: 35px
+            &-field 
+                padding: 0px 43px
     .state
         &__company
             &-rows 
@@ -711,7 +839,7 @@
             &-right 
                 margin-top: 20px
                 justify-content: flex-start
-                span 
+                span, a 
                     margin-left: 0
                     margin-right: 10px
         &__cases
@@ -768,6 +896,8 @@
         ul, ol 
             li 
                 margin-bottom: 10px
+    textarea
+        height: 122px
     table 
         tr 
             td 
@@ -784,6 +914,86 @@
         &__actions 
             .container 
                 grid-template: auto / 1fr
+    .statuses
+        &__serts 
+            &-track 
+                img 
+                    margin-right: 10px
+                    max-width: 145px
+                    min-width: 145px
+    .gifts 
+        &__parts 
+            .container 
+                gap: 20px
+            &-col 
+                padding: 20px 10px
+            &-list 
+                margin: 25px 0px
+                li 
+                    margin-bottom: 12px
+                    span 
+                        &:last-child
+                            min-width: unset
+                            text-align: right
+            &-content 
+                p 
+                    margin-bottom: 10px
+    .gallery
+        &__overlay
+            .modal-close
+                width: 22px
+                height: 22px
+                left: unset
+                right: -10px
+                top: -10px
+            &-arrow 
+                width: 35px
+                &.left 
+                    right: unset
+                    left: -19px
+                &.right 
+                    left: unset
+                    right: -19px
+    .company 
+        &__mission
+            padding: 30px 7px
+            span 
+                margin-bottom: 20px
+                font-size: 14px
+        &__work 
+            &-item 
+                padding: 20px 10px
+                min-height: 225px
+                span 
+                    font-size: 18px
+        &__stats 
+            &-list 
+                gap: 10px 24px
+                span 
+                    width: 136px
+                    display: flex
+                    align-items: center
+                    justify-content: center
+        &__ways 
+            &-list 
+                gap: 20px
+                grid-template: auto / 1fr
+            &-item 
+                padding: 20px 10px
+            &-title 
+                margin-bottom: 20px
+                justify-content: flex-start
+        &__banner 
+            padding: 20px 10px
+            flex-direction: column
+            align-items: flex-start
+            min-height: 209px
+            margin-bottom: 20px
+            .button 
+                width: 100%
+            span 
+                margin-right: 0
+                margin-bottom: 20px
     .state
         &__content
             grid-template: auto / 1fr 
@@ -1009,6 +1219,75 @@
         height: 497px
         &.short 
             height: 197px
+    .company
+        &__clients
+            &-list 
+                grid-template: auto / repeat(3, 1fr)
+                gap: 10px 24px
+                span 
+                    height: 102px
+    .gifts 
+        &__parts
+            &-content 
+                .row 
+                    gap: 0px 5px
+                    grid-template: auto / auto auto 
+        &__clients 
+            .container 
+                gap: 80px
+            &-col 
+                padding: 0
+                border-radius: 0
+                border: none
+                h2 
+                    font-size: 20px
+                    text-align: left
+            &-cases, &-stats 
+                margin: 0px 0px 40px
+            &-stats 
+                gap: 15px 24px
+                .desk 
+                    display: none
+                img 
+                    height: auto
+                    width: 136px
+                .mobile 
+                    display: inline-block
+                    width: 94px
+            &-cases 
+                gap: 10px 24px 
+                grid-template: auto / 1fr 1fr
+                span 
+                    height: 102px
+    .clients 
+        &__item 
+            padding: 20px 9px 30px
+            img 
+                max-width: 250px
+                max-height: 50px
+                margin-bottom: 15px
+            h3 
+                margin-bottom: 15px
+                font-size: 18px
+                text-align: center
+        &__navigate
+            margin-top: 40px
+    .statuses
+        &__list 
+            .benefit
+                &__item 
+                    &-image 
+                        width: 60px
+        &__serts 
+            &-field 
+                padding: 0px 50px
+                max-width: 316px
+                margin: 0px auto
+            &-track 
+                img 
+                    min-width: unset
+                    max-width: 216px
+                    width: calc(100vw - 124px)
     .crm 
         &__promo 
             height: auto
@@ -1452,8 +1731,9 @@
                 flex-direction: column
                 align-items: flex-start
         &__logo 
-            margin-bottom: 0
-            margin-top: 45px
+            &-link
+                margin-bottom: 0
+                margin-top: 45px
         &__copy 
             font-size: 11px
         &__col 
@@ -1469,3 +1749,7 @@
         &__actions
             &-preview 
                 height: 170px
+    .company
+        &__clients
+            &-list 
+                grid-template: auto / 1fr 1fr

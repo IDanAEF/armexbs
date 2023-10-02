@@ -1,0 +1,38 @@
+.clients
+    &__list 
+        display: grid
+        grid-template: auto / 1fr 1fr 
+        gap: 30px 24px
+    &__item 
+        border-radius: 15px
+        background: #FFF7C5
+        padding: 20px 20px 35px
+        cursor: pointer
+        img 
+            display: block
+            margin: 0px auto 20px
+            max-width: 300px
+            max-height: 70px
+            object-fit: contain
+        h3 
+            margin-bottom: 20px
+            transition: 0.3s color
+        &:hover 
+            h3 
+                color: $base-color
+    &__navigate
+        margin-top: 50px
+        display: flex
+        align-items: center
+        justify-content: center
+        a 
+            margin-right: 8px
+            padding: 8px 12px
+            border-radius: 2px
+            background: #F5F5F5
+            text-decoration: none 
+            &.active
+                background: $base-color
+                color: #fff
+            &:last-child
+                margin-top: 0 !important

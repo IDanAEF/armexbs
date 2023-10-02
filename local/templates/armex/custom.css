@@ -10,6 +10,10 @@
 .main__sites-item.image-corr img {
     max-height: 47px;
 }
+.clients__item img {
+    max-height: 80px;
+    height: 80px;
+}
 @media (max-width: 1200px) {
     .main__sites-item.image-corr img {
         max-height: 32px;
@@ -21,6 +25,10 @@
     }
     .demo__banner-text {
         margin-bottom: 30px;
+    }
+    .clients__item img {
+        max-height: 70px;
+        height: 70px;
     }
 }
 @media (max-width: 768px) {
@@ -39,5 +47,9 @@
     }
     .footer__col.mobile {
         display: block;
+    }
+    .clients__item img {
+        max-height: 50px;
+        height: 50px;
     }
 }

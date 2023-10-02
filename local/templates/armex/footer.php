@@ -19,13 +19,13 @@
                         <a href="/prices/" class="footer__title text_fz20 text_fw600">цены</a>
                     </div>
                     <div class="footer__menu">
-                        <a href="/about/" class="footer__title text_fz20 text_fw600">о нас</a>
+                        <a href="/company/" class="footer__title text_fz20 text_fw600">о нас</a>
                     </div>
                     <div class="footer__menu">
                         <a href="/contacts/" class="footer__title text_fz20 text_fw600">контакты</a>
                     </div>
                     <div class="footer__menu">
-                        <a href="#" class="footer__title text_fz20 text_fw600">попробуйте бесплатно</a>
+                        <span class="footer__title text_fz20 text_fw600">попробуйте бесплатно</span>
                         <ul class="footer__menu-under text_fz18">
                             <li><a href="/demo/">Демоверсии 1С</a></li>
                             <li><a href="/fresh/">1С:Fresh</a></li>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="footer__col">
                     <div class="footer__menu">
-                        <a href="/about/" class="footer__title text_fz20 text_fw600">о нас</a>
+                        <span class="footer__title text_fz20 text_fw600">о нас</span>
                         <ul class="footer__menu-under text_fz18">
                             <li><a href="/company/">О компании</a></li>
                             <li><a href="/benefit/">Наши преимущества</a></li>
@@ -85,7 +85,7 @@
                 </div>
                 <div class="footer__col">
                     <div class="footer__menu">
-                        <a href="#" class="footer__title text_fz20 text_fw600">попробуйте бесплатно</a>
+                        <span class="footer__title text_fz20 text_fw600">попробуйте бесплатно</span>
                         <ul class="footer__menu-under text_fz18">
                             <li><a href="/demo/">Демоверсии 1С</a></li>
                             <li><a href="/fresh/">1С:Fresh</a></li>
@@ -122,7 +122,7 @@
                         <?php $APPLICATION->IncludeFile(SITE_DIR."include/footer-speak.php", [], ["MODE" => "html"]) ?>
                     </div>
                     <div class="footer__menu">
-                        <a href="#" class="footer__title text_fz20 text_fw600">Наши соц сети</a>
+                        <span class="footer__title text_fz20 text_fw600">Наши соц сети</span>
                         <div class="footer__menu-under social text_fz18">
                             <?php $APPLICATION->IncludeFile(SITE_DIR."include/footer-social.php", [], ["MODE" => "html"]) ?>
                         </div>
@@ -142,9 +142,9 @@
                             </div>
                         </div>
                         <a href="/privacy/" class="footer__dop-item">Политика конфиденциальности</a>
-                        <a href="/report/" class="footer__dop-item">Сообщить об ошибке</a>
+                        <span class="footer__dop-item body-click-target" data-content="feedback-error">Сообщить об ошибке</span>
                     </div>
-                    <a href="/">
+                    <a href="/" class="footer__logo-link">
                         <?php $APPLICATION->IncludeFile(SITE_DIR."include/footer-logo.php", [], ["MODE" => "html"]) ?>
                     </a>
                 </div>
@@ -224,6 +224,31 @@
             'name' => 'feedback-gift'
         ], ["MODE" => "php"]);
     ?>
+    <div class="feedback-modal modal body-click-content" data-content="feedback-error">
+        <span class="modal-close body-click-close"></span>
+        <div class="main__feedback-top">
+            <h2 class="text_fz32 text_fw400">Сообщить об ошибке</h2>
+        </div>
+        <form action="" class="main__feedback-form text_fz18 text_fw300" data-success="error">
+            <div class="main__feedback-form-col">
+                <span class="text_fw700">Комментарий</span>
+                <textarea name="feedcomment" required></textarea>
+            </div>
+            <div class="main__feedback-form-col">
+                <span class="text_fw700">Телефон</span>
+                <input type="tel" placeholder="+7 (___) ___-__-__" name="feedphone" required>
+            </div>
+            <div class="main__feedback-form-col">
+                <button class="text_fz20">
+                    Отправить
+                    <img src="<?=SITE_TEMPLATE_PATH?>/assets/images/arrow-right.svg" alt="arrow">
+                </button>
+            </div>
+            <div class="main__feedback-form-col copy text_fz14 text_fw300">
+                Нажимая «Отправить», вы соглашаетесь с <a href="/privacy/" class="text_underline">политикой конфиденциальности</a>
+            </div>
+        </form>
+    </div>
     <!-- Modals : End -->
 
 
@@ -241,5 +266,20 @@
             'name' => 'thanks'
         ], ["MODE" => "php"]);
     ?>
+    <?php 
+        $APPLICATION->IncludeFile(SITE_DIR."include/default-success.php", [
+            'title' => 'Спасибо',
+            'descr' => 'Мы уже получили ваше сообщение <br>и приступили к исправлению ошибки',
+            'name' => 'error'
+        ], ["MODE" => "php"]);
+    ?>
+    <div class="gallery__overlay">
+        <div class="gallery__overlay-block">
+            <span class="modal-close gallery__overlay-close"></span>
+            <img src="<?=$imgPath?>arrow-circle-right.svg" alt="" class="gallery__overlay-arrow left">
+            <img src="<?=$imgPath?>arrow-circle-right.svg" alt="" class="gallery__overlay-arrow right">
+            
+        </div>
+    </div>
 </body>
 </html>
