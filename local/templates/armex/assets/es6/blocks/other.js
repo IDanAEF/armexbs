@@ -266,6 +266,23 @@ const other = () => {
     } catch (e) {
         console.log(e.stack);
     }
+
+    try {
+        //structure svg
+        const svg = document.querySelector('.structure__main svg');
+
+        if (svg) {
+            const svgScal = svg.querySelectorAll('.scalable');
+
+            svgScal.forEach(scal => {
+                scal.addEventListener('click', () => {
+                    svg.append(scal);
+                });
+            });
+        }
+    } catch (e) {
+        console.log(e.stack);
+    }
 }
 
 export default other;

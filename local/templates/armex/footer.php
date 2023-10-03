@@ -43,9 +43,7 @@
                             <li><a href="/company/">О компании</a></li>
                             <li><a href="/benefit/">Наши преимущества</a></li>
                             <li><a href="/statuses/">Статусы и награды</a></li>
-                            <li><a href="/sertificates/">Сертификаты сотрудников</a></li>
                             <li><a href="/partnership/">Партнерство</a></li>
-                            <li><a href="/stucture/">Структура компании</a></li>
                         </ul>
                     </div>
                     <div class="footer__menu">
@@ -92,7 +90,7 @@
                             <li><a href="/rent/">Аренда 1С</a></li>
                             <li><a href="/crm/">Битрикс24</a></li>
                             <li><a href="/grm/">1С:ГРМ</a></li>
-                            <li><a href="/industr/">Демосервис отраслевых <br>продуктов</a></li>
+                            <li><a href="/industr/">1С для вашей отрасли</a></li>
                         </ul>
                     </div>
                 </div>

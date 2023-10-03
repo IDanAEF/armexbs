@@ -37,15 +37,38 @@
                     </span>
                 </div>
                 <div class="contacts__social">
-                    <div class="footer__speak text_fz14">
-                        <?php $APPLICATION->IncludeFile(SITE_DIR."include/footer-speak.php", [], ["MODE" => "html"]) ?>
-                    </div>
                     <div class="contacts__social-links">
                         <h3 class="text_fz20 text_fw600 text_upper">Наши соцсети</h3>
                         <div class="contacts__social-items">
                             <?php $APPLICATION->IncludeFile(SITE_DIR."include/contacts-social.php", [], ["MODE" => "html"]) ?>
                         </div>
                     </div>
+                    <div class="footer__speak text_fz14">
+                        <?php $APPLICATION->IncludeFile(SITE_DIR."include/footer-speak.php", [], ["MODE" => "html"]) ?>
+                    </div>
+                </div>
+                <div class="contacts__info text_fz20 text_ffIBM">
+                    <h3 class="text_fz20 text_fw600 text_upper">Отдел технической поддержки</h3>
+                    <a href="tel:<?=str_replace(['(', ')', '-', ' '], '', $contacts['phone'])?>">
+                        <img src="<?=$imgPath?>phone-red.svg" alt="">
+                        <?=$contacts['phone']?>
+                    </a>
+                    <a href="mailto:hotline@armex.ru">
+                        <img src="<?=$imgPath?>mail-red.svg" alt="">
+                        hotline@armex.ru
+                    </a>
+                    <a href="https://join.skype.com/invite/diCzxMjPi63M" target="_blank">
+                        <img src="<?=$imgPath?>skype-static.svg" alt="">
+                        hotline_armex
+                    </a>
+                    <a href="" class="text_underline">Вход в центр поддержки Helpdesk</a>
+                </div>
+                <div class="contacts__info text_fz20 text_ffIBM">
+                    <h3 class="text_fz20 text_fw600 text_upper">служба качества</h3>
+                    <a href="mailto:k@armex.ru">
+                        <img src="<?=$imgPath?>mail-red.svg" alt="">
+                        k@armex.ru
+                    </a>
                 </div>
             </div>
         </div>

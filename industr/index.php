@@ -1403,11 +1403,13 @@
                         Государственное и муниципальное управление
                     </div>
                     <div class="industr__item-points">
-                        <div class="industr__item-point open-fix">
-                            Для учреждений государственного и муниципального управления мы рекомендуем следующие продукты 1С:
+                        <div class="industr__item-point sitemaps__row parent">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            Государственное и муниципальное управление
                         </div>
-                        <div class="industr__item-detail active">
-                            <div class="industr__item-row">
+                        <div class="industr__item-detail">
+                            <div class="industr__item-row sitemaps__row">
+                                Для учреждений государственного и муниципального управления мы рекомендуем следующие продукты 1С:
                                 <ul>
                                     <li><b>1С:ЗАГС</b></li>
                                 </ul>
@@ -1434,11 +1436,13 @@
                         Некоммерческие организации
                     </div>
                     <div class="industr__item-points">
-                        <div class="industr__item-point open-fix">
-                            Для некоммерческих организаций мы рекомендуем следующие продукты 1С:
+                        <div class="industr__item-point sitemaps__row parent">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            Некоммерческие организации
                         </div>
-                        <div class="industr__item-detail active">
-                            <div class="industr__item-row">
+                        <div class="industr__item-detail">
+                            <div class="industr__item-row sitemaps__row">
+                                Для некоммерческих организаций мы рекомендуем следующие продукты 1С:
                                 <ul>
                                     <li><b>1С:Бухгалтерия СНТ</b></li>
                                 </ul>

@@ -148,7 +148,7 @@
                     <a href="/industr/" class="main__try-item mobile-slider-item">
                         <img src="<?=$beforePath?>try6.png" alt="">
                         <div class="main__try-text">
-                            <h3 class="text_fz20 text_fw600">Демосервис отраслевых продуктов</h3>
+                            <h3 class="text_fz20 text_fw600">1С для вашей <br>отрасли</h3>
                             <span>Тестируйте конфиграции 1С для вашей отрасли и ваших задач</span>
                         </div>
                     </a>

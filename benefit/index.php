@@ -157,6 +157,16 @@
                         </a>
                     </div>
                 </div>
+                <div class="benefit__item" id="sng">
+                    <img src="<?=$beforePath?>benefit/benefit11.png" alt="" class="benefit__item-image">
+                    <div class="benefit__item-info text_fz18">
+                        <h3 class="benefit__item-title text_fz24 text_fw600 text_upper">
+                            <img src="<?=$beforePath?>benefit/benefit10.png" alt="" class="benefit__item-image">
+                            Работаем с партнерами из всех регионов РФ и СНГ
+                        </h3>
+                        Компания "Армекс" работает с партнерами по всей территории Российской Федерации и стран СНГ. Мы осуществляем быструю поставку лицензий в любой населенный пункт
+                    </div>
+                </div>
             </div>
         </div>
     </section>
