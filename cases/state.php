@@ -10,11 +10,26 @@
         false,
         [
             'NAME', 'PREVIEW_PICTURE', 'PREVIEW_TEXT', 'DETAIL_TEXT',
-            'PROPERTY_FIRST_TEXT', 'PROPERTY_COMMENT', 
-            'PROPERTY_COMMENT_AUTHOR', 'PROPERTY_ADDRESS', 'PROPERTY_PHONE', 
-            'PROPERTY_EMAIL', 'PROPERTY_WEBSITE', 'PROPERTY_STATE_NAME'
+            'PROPERTY_FIRST_TEXT', 'PROPERTY_COMMENT', 'PROPERTY_CLIENT',
+            'PROPERTY_COMMENT_AUTHOR'
         ]
     )->Fetch();
+
+    $client = '';
+    if ($case['PROPERTY_CLIENT_VALUE']) {
+        $client = CIBlockElement::GetList(
+            [],
+            ['IBLOCK_ID' => 52, 'ID' => $case['PROPERTY_CLIENT_VALUE']],
+            false,
+            false,
+            [
+                'NAME',
+                'PREVIEW_PICTURE', 'DETAIL_TEXT',
+                'PROPERTY_ADDRESS', 'PROPERTY_PHONE', 
+                'PROPERTY_EMAIL', 'PROPERTY_WEBSITE'
+            ]
+        )->Fetch();
+    }
 
     $images = [];
     $imagesClass = CIBlockElement::GetProperty(
@@ -28,7 +43,7 @@
         $images[] = CFile::GetPath($image['VALUE']);
     }
 
-    $stateName = $case['PROPERTY_STATE_NAME_VALUE'] ?: $case['NAME'];
+    $stateName = $case['NAME'];
 
     $APPLICATION->SetPageProperty("title", "Армекс - ".$stateName);
     $APPLICATION->SetTitle("Армекс - ".$stateName);
@@ -37,9 +52,9 @@
     <div class="breadcrumbs line text_fz18 text_upper">
         <div class="container">
             <a href="/">Главная</a>
-            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
             <a href="/cases/">Кейсы</a>
-            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
             <span><?=$stateName?></span>
         </div>
     </div>
@@ -58,7 +73,7 @@
                     <?php
                         foreach($images as $img) {
                             ?>
-                            <img src="<?=$img?>" alt="">
+                            <img src="<?=$img?>" alt="<?=$stateName?>">
                             <?php
                         }
                     ?>
@@ -72,40 +87,40 @@
                 </div>
                 <?php endif; ?>
                 <div class="state__comment-text text_fz20 text_italic">
-                    <img src="<?=$imgPath?>quot.svg" alt="">
+                    <img src="<?=$imgPath?>quot.svg" alt="quot">
                     <?=$case['PROPERTY_COMMENT_VALUE']['TEXT']?>
-                    <img src="<?=$imgPath?>quot.svg" alt="">
+                    <img src="<?=$imgPath?>quot.svg" alt="quot">
                 </div>
             </div>
             <?php endif; ?>
             <?php
-                $outContacts = $case['PROPERTY_ADDRESS_VALUE'] || $case['PROPERTY_EMAIL_VALUE'] || $case['PROPERTY_PHONE_VALUE'] || $case['PROPERTY_WEBSITE_VALUE'];
+                $outContacts = $client['PROPERTY_ADDRESS_VALUE'] || $client['PROPERTY_EMAIL_VALUE'] || $client['PROPERTY_PHONE_VALUE'] || $client['PROPERTY_WEBSITE_VALUE'];
             ?>
-            <?php if ($outContacts || $case['PREVIEW_TEXT']) : ?>
+            <?php if ($outContacts || $client['DETAIL_TEXT']) : ?>
             <div class="state__company text_fz18 main__block">
-                <?php if ($case['PREVIEW_PICTURE']) : ?>
-                    <img src="<?=CFile::GetPath($case['PREVIEW_PICTURE'])?>" alt="" class="state__company-image">
+                <?php if ($client['PREVIEW_PICTURE']) : ?>
+                    <img src="<?=CFile::GetPath($client['PREVIEW_PICTURE'])?>" alt="<?=$client['NAME']?>" class="state__company-image">
                 <?php endif; ?>
-                <?=$case['PREVIEW_TEXT']?>
+                <?=$client['DETAIL_TEXT']?>
                 <div class="state__company-info">
-                    <?php if ($case['PREVIEW_PICTURE']) : ?>
-                        <img src="<?=CFile::GetPath($case['PREVIEW_PICTURE'])?>" alt="">
+                    <?php if ($client['PREVIEW_PICTURE']) : ?>
+                        <img src="<?=CFile::GetPath($client['PREVIEW_PICTURE'])?>" alt="<?=$client['NAME']?>">
                     <?php endif; ?>
                     <?php if ($outContacts) : ?>
                     <div class="state__company-contacts">
                         <b>Контактная информация:</b>
                         <div class="state__company-rows">
-                            <?php if ($case['PROPERTY_ADDRESS_VALUE']) : ?>
-                                <span><?=$case['PROPERTY_ADDRESS_VALUE']?></span>
+                            <?php if ($client['PROPERTY_ADDRESS_VALUE']) : ?>
+                                <span><?=$client['PROPERTY_ADDRESS_VALUE']?></span>
                             <?php endif; ?>
-                            <?php if ($case['PROPERTY_EMAIL_VALUE']) : ?>
-                                <span>E-mail: <a href="mailto:<?=$case['PROPERTY_EMAIL_VALUE']?>"><?=$case['PROPERTY_EMAIL_VALUE']?></a></span>
+                            <?php if ($client['PROPERTY_EMAIL_VALUE']) : ?>
+                                <span>E-mail: <a href="mailto:<?=$client['PROPERTY_EMAIL_VALUE']?>"><?=$client['PROPERTY_EMAIL_VALUE']?></a></span>
                             <?php endif; ?>
-                            <?php if ($case['PROPERTY_PHONE_VALUE']) : ?>
-                                <span>Телефон: <a href="tel:<?=str_replace(['(', ')', '-', ' '], '', $case['PROPERTY_PHONE_VALUE'])?>"><?=$case['PROPERTY_PHONE_VALUE']?></a></span>
+                            <?php if ($client['PROPERTY_PHONE_VALUE']) : ?>
+                                <span>Телефон: <a href="tel:<?=str_replace(['(', ')', '-', ' '], '', $client['PROPERTY_PHONE_VALUE'])?>"><?=$client['PROPERTY_PHONE_VALUE']?></a></span>
                             <?php endif; ?>
-                            <?php if ($case['PROPERTY_WEBSITE_VALUE']) : ?>
-                                <span>Веб-сайт: <a href="<?=$case['PROPERTY_WEBSITE_VALUE']?>" target="_blank"><?=$case['PROPERTY_WEBSITE_VALUE']?></a></span>
+                            <?php if ($client['PROPERTY_WEBSITE_VALUE']) : ?>
+                                <span>Веб-сайт: <a href="<?=$client['PROPERTY_WEBSITE_VALUE']?>" target="_blank"><?=$client['PROPERTY_WEBSITE_VALUE']?></a></span>
                             <?php endif; ?>
                         </div>
                     </div>

@@ -1,5 +1,6 @@
 <?php
     require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+    $APPLICATION->SetPageProperty("description", "");
     $APPLICATION->SetPageProperty("title", "Армекс - Технология 1C:Fresh");
     $APPLICATION->SetTitle("Армекс - Технология 1C:Fresh");
 ?>
@@ -7,7 +8,7 @@
     <div class="breadcrumbs line text_fz18 text_upper">
         <div class="container">
             <a href="/">Главная</a>
-            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
             <span>Технология 1C:Fresh</span>
         </div>
     </div>
@@ -21,15 +22,15 @@
     <section class="grm__points main__block text_fz20 text_center">
         <div class="container three">
             <div class="grm__point">
-                <img src="<?=$beforePath?>points/point10.png" alt="">
+                <img src="<?=$beforePath?>points/point10.png" alt="Доступ 24/7 с любого компьютера">
                 <span class="text_fw500">Доступ 24/7 с любого компьютера</span>
             </div>
             <div class="grm__point">
-                <img src="<?=$beforePath?>points/point11.png" alt="">
+                <img src="<?=$beforePath?>points/point11.png" alt="Хранение данных в защищенном облаке">
                 <span class="text_fw500">Хранение данных в защищенном облаке</span>
             </div>
             <div class="grm__point">
-                <img src="<?=$beforePath?>points/point7.png" alt="">
+                <img src="<?=$beforePath?>points/point7.png" alt="Бесплатные обновления программы">
                 <span class="text_fw500">Бесплатные обновления программы</span>
             </div>
         </div>
@@ -74,7 +75,7 @@
                     <div class="fresh__programs-item text_fz20 text_fw300">
                         <div class="fresh__programs-head text_fz24 text_upper text_fw400 sitemaps__row parent">
                             <?=$prog[0]?>
-                            <img src="<?=$imgPath?>arrow-down-light.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-down-light.svg" alt="arrow-down-light">
                         </div>
                         <div class="fresh__programs-body sitemaps__row-sub">
                             <div class="fresh__programs-row sitemaps__row">
@@ -181,7 +182,7 @@
             <div class="fresh__programs-item text_fz20 text_fw400">
                 <div class="fresh__programs-head text_fz24 text_upper sitemaps__row parent">
                     ПРЕДОСТАВЛЯЕМЫЕ СЕРВИСНЫЕ УСЛУГИ
-                    <img src="<?=$imgPath?>arrow-down-light.svg" alt="">
+                    <img src="<?=$imgPath?>arrow-down-light.svg" alt="arrow-down-light">
                 </div>
                 <div class="fresh__programs-body sitemaps__row-sub">
                     <div class="fresh__programs-row sitemaps__row">
@@ -347,7 +348,7 @@
             </div>
         </div>
     </section>
-    <?php $APPLICATION->IncludeFile(SITE_DIR."include/feedback-fresh.php", [], ["MODE" => "html"]) ?>
+    <?php $APPLICATION->IncludeFile(SITE_DIR."include/feedback.php", ['fresh' => true], ["MODE" => "html"]) ?>
     <?php $APPLICATION->IncludeFile(SITE_DIR."include/sites.php", [], ["MODE" => "html"]) ?>
 </main>
 <?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php"); ?>

@@ -1,5 +1,6 @@
 <?php
     require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+    $APPLICATION->SetPageProperty("description", "");
     $APPLICATION->SetPageProperty("title", "Армекс - Аренда 1C");
     $APPLICATION->SetTitle("Армекс - Аренда 1C");
 ?>
@@ -7,7 +8,7 @@
     <div class="breadcrumbs line text_fz18 text_upper">
         <div class="container">
             <a href="/">Главная</a>
-            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
             <span>Аренда 1C</span>
         </div>
     </div>
@@ -21,27 +22,27 @@
     <section class="grm__points main__block text_fz20 text_center">
         <div class="container three">
             <div class="grm__point">
-                <img src="<?=$beforePath?>points/point4.png" alt="">
+                <img src="<?=$beforePath?>points/point4.png" alt="Экономия на приобретении ПО">
                 <span class="text_fw500">Экономия на приобретении ПО</span>
             </div>
             <div class="grm__point">
-                <img src="<?=$beforePath?>points/point5.png" alt="">
+                <img src="<?=$beforePath?>points/point5.png" alt="Доступ 24/7 с любого компьютера">
                 <span class="text_fw500">Доступ 24/7 с любого компьютера</span>
             </div>
             <div class="grm__point">
-                <img src="<?=$beforePath?>points/point6.png" alt="">
+                <img src="<?=$beforePath?>points/point6.png" alt="Ежедневное автоматическое резервирование">
                 <span class="text_fw500">Ежедневное автоматическое резервирование</span>
             </div>
             <div class="grm__point">
-                <img src="<?=$beforePath?>points/point7.png" alt="">
+                <img src="<?=$beforePath?>points/point7.png" alt="Бесплатное обновление типовых продуктов 1С">
                 <span class="text_fw500">Бесплатное обновление типовых продуктов 1С</span>
             </div>
             <div class="grm__point">
-                <img src="<?=$beforePath?>points/point8.png" alt="">
+                <img src="<?=$beforePath?>points/point8.png" alt="Бесперебойное функционирование оборудования">
                 <span class="text_fw500">Бесперебойное функционирование оборудования</span>
             </div>
             <div class="grm__point">
-                <img src="<?=$beforePath?>points/point9.png" alt="">
+                <img src="<?=$beforePath?>points/point9.png" alt="Сокращение расходов на обслуживающий персонал">
                 <span class="text_fw500">Сокращение расходов на обслуживающий персонал</span>
             </div>
         </div>
@@ -79,7 +80,7 @@
                             <td style="width: 25%"><b>Стандарт</b></td>
                             <td style="width: 25%">
                                 <b>ПРОФ </b>
-                                <img src="<?=$imgPath?>recomend.png" alt="">
+                                <img src="<?=$imgPath?>recomend.png" alt="recomend">
                             </td>
                         </tr>
                         <tr>
@@ -90,57 +91,57 @@
                         </tr>
                         <tr>
                             <td>Доступ через браузер или тонкий клиент 1С</td>
-                            <td><img src="<?=$imgPath?>green-check.svg" alt=""></td>
-                            <td><img src="<?=$imgPath?>green-check.svg" alt=""></td>
-                            <td><img src="<?=$imgPath?>green-check.svg" alt=""></td>
+                            <td><img src="<?=$imgPath?>green-check.svg" alt="green-check"></td>
+                            <td><img src="<?=$imgPath?>green-check.svg" alt="green-check"></td>
+                            <td><img src="<?=$imgPath?>green-check.svg" alt="green-check"></td>
                         </tr>
                         <tr>
                             <td>Доступ через удаленный рабочий стол (RDP)</td>
-                            <td><img src="<?=$imgPath?>green-check.svg" alt=""></td>
+                            <td><img src="<?=$imgPath?>green-check.svg" alt="green-check"></td>
                             <td></td>
-                            <td><img src="<?=$imgPath?>green-check.svg" alt=""></td>
+                            <td><img src="<?=$imgPath?>green-check.svg" alt="green-check"></td>
                         </tr>
                         <tr>
                             <td>1С:Бухгалтерия ПРОФ</td>
                             <td></td>
-                            <td><img src="<?=$imgPath?>green-check.svg" alt=""></td>
-                            <td><img src="<?=$imgPath?>green-check.svg" alt=""></td>
+                            <td><img src="<?=$imgPath?>green-check.svg" alt="green-check"></td>
+                            <td><img src="<?=$imgPath?>green-check.svg" alt="green-check"></td>
                         </tr>
                         <tr>
                             <td>1С:Зарплата и управление персоналом ПРОФ</td>
                             <td></td>
                             <td></td>
-                            <td><img src="<?=$imgPath?>green-check.svg" alt=""></td>
+                            <td><img src="<?=$imgPath?>green-check.svg" alt="green-check"></td>
                         </tr>
                         <tr>
                             <td>Лицензии на платформу 1С:Предприятие</td>
-                            <td><img src="<?=$imgPath?>green-check.svg" alt=""></td>
-                            <td><img src="<?=$imgPath?>green-check.svg" alt=""></td>
-                            <td><img src="<?=$imgPath?>green-check.svg" alt=""></td>
+                            <td><img src="<?=$imgPath?>green-check.svg" alt="green-check"></td>
+                            <td><img src="<?=$imgPath?>green-check.svg" alt="green-check"></td>
+                            <td><img src="<?=$imgPath?>green-check.svg" alt="green-check"></td>
                         </tr>
                         <tr>
                             <td>Работа с измененными конфигурациями и базами 1С</td>
-                            <td><img src="<?=$imgPath?>green-check.svg" alt=""></td>
-                            <td><img src="<?=$imgPath?>green-check.svg" alt=""></td>
-                            <td><img src="<?=$imgPath?>green-check.svg" alt=""></td>
+                            <td><img src="<?=$imgPath?>green-check.svg" alt="green-check"></td>
+                            <td><img src="<?=$imgPath?>green-check.svg" alt="green-check"></td>
+                            <td><img src="<?=$imgPath?>green-check.svg" alt="green-check"></td>
                         </tr>
                         <tr>
                             <td>Бесплатная установка и перенос баз данных в облако</td>
-                            <td><img src="<?=$imgPath?>green-check.svg" alt=""></td>
-                            <td><img src="<?=$imgPath?>green-check.svg" alt=""></td>
-                            <td><img src="<?=$imgPath?>green-check.svg" alt=""></td>
+                            <td><img src="<?=$imgPath?>green-check.svg" alt="green-check"></td>
+                            <td><img src="<?=$imgPath?>green-check.svg" alt="green-check"></td>
+                            <td><img src="<?=$imgPath?>green-check.svg" alt="green-check"></td>
                         </tr>
                         <tr>
                             <td>Неограниченное количество баз данных</td>
-                            <td><img src="<?=$imgPath?>green-check.svg" alt=""></td>
+                            <td><img src="<?=$imgPath?>green-check.svg" alt="green-check"></td>
                             <td>2 базы данных</td>
-                            <td><img src="<?=$imgPath?>green-check.svg" alt=""></td>
+                            <td><img src="<?=$imgPath?>green-check.svg" alt="green-check"></td>
                         </tr>
                         <tr>
                             <td>Ежедневное резервное копирование</td>
-                            <td><img src="<?=$imgPath?>green-check.svg" alt=""></td>
-                            <td><img src="<?=$imgPath?>green-check.svg" alt=""></td>
-                            <td><img src="<?=$imgPath?>green-check.svg" alt=""></td>
+                            <td><img src="<?=$imgPath?>green-check.svg" alt="green-check"></td>
+                            <td><img src="<?=$imgPath?>green-check.svg" alt="green-check"></td>
+                            <td><img src="<?=$imgPath?>green-check.svg" alt="green-check"></td>
                         </tr>
                         <tr>
                             <td>Доступ к серверу 1С и размещение баз данных на SQL сервере</td>

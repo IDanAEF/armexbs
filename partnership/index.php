@@ -1,5 +1,6 @@
 <?php
     require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+    $APPLICATION->SetPageProperty("description", "");
     $APPLICATION->SetPageProperty("title", "Армекс - Для партнеров");
     $APPLICATION->SetTitle("Армекс - Для партнеров");
 ?>
@@ -7,14 +8,14 @@
     <div class="breadcrumbs line text_fz18 text_upper">
         <div class="container">
             <a href="/">Главная</a>
-            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
             <span>Для партнеров</span>
         </div>
     </div>
     <div class="partner__empty block-top">
         <div class="top-shadow"></div>
     </div>
-    <?php $APPLICATION->IncludeFile(SITE_DIR."include/pages-promo.php", ['id' => 2198], ["MODE" => "php"]) ?>
+    <?php $APPLICATION->IncludeFile(SITE_DIR."include/pages-promo.php", ['id' => 2256], ["MODE" => "php"]) ?>
     <section class="partner__po main__block">
         <div class="container">
             <h2 class="text_fz24 text_fw500 text_upper text_center">Мы поставляем следующее ПО</h2>
@@ -22,7 +23,7 @@
                 <?php
                     for($i = 1; $i <= 8; $i++) {
                         ?>
-                        <img src="<?=$beforePath?>partner/po<?=$i?>.png" alt="">
+                        <img src="<?=$beforePath?>partner/po<?=$i?>.png" alt="po<?=$i?>">
                         <?php
                     }
                 ?>
@@ -49,35 +50,35 @@
     <section class="partner__benefit main__block text_center">
         <div class="container">
             <div class="partner__benefit-item">
-                <img src="<?=$beforePath?>benefit/benefit2.png" alt="">
+                <img src="<?=$beforePath?>benefit/benefit2.png" alt="Качественная установка">
                 <h3 class="text_fz24">Качественная <br>установка</h3>
                 <a href="/benefit/#mark" class="button text_fz20">
                     Подробнее
-                    <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                    <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                 </a>
             </div>
             <div class="partner__benefit-item">
-                <img src="<?=$beforePath?>benefit/benefit4.png" alt="">
+                <img src="<?=$beforePath?>benefit/benefit4.png" alt="Гарантии и принципы работы">
                 <h3 class="text_fz24">Гарантии и <br>принципы работы</h3>
                 <a href="/benefit/#garant" class="button text_fz20">
                     Подробнее
-                    <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                    <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                 </a>
             </div>
             <div class="partner__benefit-item">
-                <img src="<?=$beforePath?>benefit/benefit6.png" alt="">
+                <img src="<?=$beforePath?>benefit/benefit6.png" alt="Подтвержденные статусы компании">
                 <h3 class="text_fz24">Подтвержденные <br>статусы компании</h3>
                 <a href="/benefit/#status" class="button text_fz20">
                     Подробнее
-                    <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                    <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                 </a>
             </div>
             <div class="partner__benefit-item">
-                <img src="<?=$beforePath?>benefit/benefit11.png" alt="">
+                <img src="<?=$beforePath?>benefit/benefit11.png" alt="Работаем с партнерами из всех регионов РФ и СНГ">
                 <h3 class="text_fz24">Работаем с партнерами из всех регионов РФ и СНГ</h3>
                 <a href="/benefit/#sng" class="button text_fz20">
                     Подробнее
-                    <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                    <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                 </a>
             </div>
         </div>
@@ -88,7 +89,7 @@
             <div class="fresh__programs-item text_fz20">
                 <div class="fresh__programs-head text_upper text_fw500 sitemaps__row parent">
                     ПАРТНЕРСКИЕ ПРАЙС-ЛИСТЫ
-                    <img src="<?=$imgPath?>arrow-down-light.svg" alt="">
+                    <img src="<?=$imgPath?>arrow-down-light.svg" alt="arrow-down-light">
                 </div>
                 <div class="fresh__programs-body sitemaps__row-sub">
                     <div class="fresh__programs-row partner__row sitemaps__row">
@@ -102,7 +103,7 @@
             <div class="fresh__programs-item text_fz16">
                 <div class="fresh__programs-head text_fz20 text_upper text_fw500 sitemaps__row parent">
                     реальные отзывы клиентов
-                    <img src="<?=$imgPath?>arrow-down-light.svg" alt="">
+                    <img src="<?=$imgPath?>arrow-down-light.svg" alt="arrow-down-light">
                 </div>
                 <div class="fresh__programs-body sitemaps__row-sub">
                     <div class="fresh__programs-row partner__row sitemaps__row">
@@ -129,7 +130,7 @@
                                 foreach ($list as $item) {
                                     ?>
                                     <li>
-                                        <img src="<?=$imgPath?>quot.svg" alt="">
+                                        <img src="<?=$imgPath?>quot.svg" alt="quot">
                                         <?=$item?>
                                     </li>
                                     <?php
@@ -143,7 +144,7 @@
             <div class="fresh__programs-item text_fz20">
                 <div class="fresh__programs-head text_upper text_fw500 sitemaps__row parent">
                     ЗАЯВЛЕНИЯ И ДОКУМЕНТЫ. ПРАВИЛА АПГРЕЙДОВ
-                    <img src="<?=$imgPath?>arrow-down-light.svg" alt="">
+                    <img src="<?=$imgPath?>arrow-down-light.svg" alt="arrow-down-light">
                 </div>
                 <div class="fresh__programs-body sitemaps__row-sub">
                     <div class="fresh__programs-row partner__row sitemaps__row">
@@ -202,7 +203,9 @@
     </section>
     <?php $APPLICATION->IncludeFile(SITE_DIR."include/consult.php", [
         'title' => 'Для получения условий партнерства – напишите нам',
-        'descr' => 'Оставьте заявку и мы свяжемся с вами в ближайшее время для обсуждения деталей'
+        'descr' => 'Оставьте заявку и мы свяжемся с вами в ближайшее время для обсуждения деталей',
+        'mail' => 'agent@armex.ru',
+        'partner' => true
     ], ["MODE" => "php"]) ?>
     <?php $APPLICATION->IncludeFile(SITE_DIR."include/sites.php", [], ["MODE" => "html"]) ?>
 </main>

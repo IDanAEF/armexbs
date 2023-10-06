@@ -1,5 +1,6 @@
 <?php
     require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+    $APPLICATION->SetPageProperty("description", "");
     $APPLICATION->SetPageProperty("title", "Армекс - Кейсы");
     $APPLICATION->SetTitle("Армекс - Кейсы");
 ?>
@@ -7,7 +8,7 @@
     <div class="breadcrumbs line text_fz18 text_upper">
         <div class="container">
             <a href="/">Главная</a>
-            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
             <span>Кейсы</span>
         </div>
     </div>
@@ -17,7 +18,7 @@
             ['IBLOCK_ID' => 49],
             false,
             false,
-            ['ID', 'NAME', 'PREVIEW_PICTURE']
+            ['ID', 'PREVIEW_PICTURE', 'PROPERTY_CLIENT']
         );
     ?>
     <section class="cases__main main__block block-top">
@@ -27,14 +28,23 @@
             <div class="main__cases-track not-slider">
                 <?php
                     while ($case = $cases->Fetch()) {
+                        $client = CIBlockElement::GetList(
+                            ["SORT" => "ASC"],
+                            ['IBLOCK_ID' => 52, 'ID' => $case['PROPERTY_CLIENT_VALUE']],
+                            false,
+                            false,
+                            ['NAME', 'PREVIEW_PICTURE']
+                        )->Fetch();
                         ?>
                         <div class="main__cases-item">
                             <div class="main__cases-left">
-                                <img src="<?=CFile::GetPath($case['PREVIEW_PICTURE'])?>" alt="">
-                                <span class="text_fz20 text_fw600"><?=$case['NAME']?></span>
+                                <?php if ($client['PREVIEW_PICTURE']) : ?>
+                                    <img src="<?=CFile::GetPath($client['PREVIEW_PICTURE'])?>" alt="<?=$client['NAME']?>">
+                                <?php endif; ?>
+                                <span class="text_fz20 text_fw600"><?=$client['NAME']?></span>
                                 <a href="/cases/case<?=$case['ID']?>/" class="button text_fz20">
                                     Подробнее
-                                    <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                                    <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                                 </a>
                             </div>
                             <div class="main__cases-right text_fz14 text_fw300">

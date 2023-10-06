@@ -1,5 +1,6 @@
 <?php
     require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+    $APPLICATION->SetPageProperty("description", "");
     $APPLICATION->SetPageProperty("title", "Армекс - Статусы и награды");
     $APPLICATION->SetTitle("Армекс - Статусы и награды");
 ?>
@@ -7,7 +8,7 @@
     <div class="breadcrumbs line text_fz18 text_upper">
         <div class="container">
             <a href="/">Главная</a>
-            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
             <span>Статусы и награды</span>
         </div>
     </div>
@@ -18,7 +19,7 @@
             <div class="statuses__list main__block">
                 <div class="container">
                     <h2 class="text_fz32 text_fw600 text_upper">
-                        <img src="<?=$imgPath?>star.svg" alt="">
+                        <img src="<?=$imgPath?>star.svg" alt="star">
                         статусы
                     </h2>
                     <?php
@@ -53,10 +54,10 @@
                             }
                             ?>
                             <div class="benefit__item">
-                                <img src="<?=CFile::GetPath($stat['PREVIEW_PICTURE'])?>" alt="" class="benefit__item-image">
+                                <img src="<?=CFile::GetPath($stat['PREVIEW_PICTURE'])?>" alt="<?=$stat['NAME']?>" class="benefit__item-image">
                                 <div class="benefit__item-info text_fz18">
                                     <h3 class="benefit__item-title text_fz24 text_fw600 text_upper">
-                                        <img src="<?=CFile::GetPath($stat['PREVIEW_PICTURE'])?>" alt="" class="benefit__item-image">
+                                        <img src="<?=CFile::GetPath($stat['PREVIEW_PICTURE'])?>" alt="<?=$stat['NAME']?>" class="benefit__item-image">
                                         <?=$stat['NAME']?>
                                     </h3>
                                     <?=$stat['PREVIEW_TEXT']?>
@@ -87,11 +88,11 @@
     <section class="statuses__serts main__block slider" data-pc-vis="5" data-lap-vis="4" data-tablet-vis="3" data-mob-vis="1">
         <div class="container">
             <h2 class="text_fz32 text_fw600 text_upper">
-                <img src="<?=$imgPath?>star.svg" alt="">
+                <img src="<?=$imgPath?>star.svg" alt="star">
                 Награды и сертификаты
             </h2>
             <div class="statuses__serts-field">
-                <img src="<?=$imgPath?>arrow-circle-right.svg" alt="" class="statuses__serts-arrow left slider-left">
+                <img src="<?=$imgPath?>arrow-circle-right.svg" alt="arrow-circle-right" class="statuses__serts-arrow left slider-left">
                 <div class="statuses__serts-list slider-list">
                     <div class="statuses__serts-track slider-track gallery-items">
                         <?php
@@ -105,13 +106,13 @@
 
                             while ($sert = $serts->Fetch()) {
                                 ?>
-                                <img src="<?=CFile::GetPath($sert['PREVIEW_PICTURE'])?>" alt="" class="slider-item gallery-item" data-full="<?=CFile::GetPath($sert['DETAIL_PICTURE'])?>">
+                                <img src="<?=CFile::GetPath($sert['PREVIEW_PICTURE'])?>" alt="sert" class="slider-item gallery-item" data-full="<?=CFile::GetPath($sert['DETAIL_PICTURE'])?>">
                                 <?php
                             }
                         ?>
                     </div>
                 </div>
-                <img src="<?=$imgPath?>arrow-circle-right.svg" alt="" class="statuses__serts-arrow right slider-right">
+                <img src="<?=$imgPath?>arrow-circle-right.svg" alt="arrow-circle-right" class="statuses__serts-arrow right slider-right">
             </div>
         </div>
     </section>

@@ -1,5 +1,6 @@
 <?php
     require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+    $APPLICATION->SetPageProperty("description", "");
     $APPLICATION->SetPageProperty("title", "Армекс - Демоверсии 1С");
     $APPLICATION->SetTitle("Армекс - Демоверсии 1С");
 ?>
@@ -7,7 +8,7 @@
     <div class="breadcrumbs line text_fz18 text_upper">
         <div class="container">
             <a href="/">Главная</a>
-            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
             <span>демоверсии 1с</span>
         </div>
     </div>
@@ -21,6 +22,7 @@
     <section class="demo__list text_fz20 main__block">
         <div class="container">
             <?php
+                $onlyNames = [];
                 $demoItems = [
                     [1, '1С:ERP Управление предприятием'],
                     [2, '1С:Государственные и муниципальные закупки 8'],
@@ -52,9 +54,10 @@
                 ];
 
                 foreach ($demoItems as $item) {
+                    $onlyNames[] = $item[1];
                     ?>
                     <div class="demo__item">
-                        <img src="<?=$beforePath?>demo/demo<?=$item[0]?>.png" alt="">
+                        <img src="<?=$beforePath?>demo/demo<?=$item[0]?>.png" alt="<?=$item[1]?>">
                         <?=$item[1]?>
                     </div>
                     <?php
@@ -71,4 +74,16 @@
     <?php $APPLICATION->IncludeFile(SITE_DIR."include/feedback.php", [], ["MODE" => "html"]) ?>
     <?php $APPLICATION->IncludeFile(SITE_DIR."include/sites.php", [], ["MODE" => "html"]) ?>
 </main>
+<?php 
+    $APPLICATION->IncludeFile(SITE_DIR."include/default-form-modal.php", [
+        'title' => 'Давайте обсудим ваш проект',
+        'descr' => 'Оставьте заявку и мы свяжемся с вами в ближайшее время для обсуждения деталей',
+        'success' => 'save',
+        'name' => 'feedback-demos',
+        'section' => '172',
+        'listName' => 'feeddemos',
+        'listTitle' => 'Выберите продукт 1С',
+        'items' => $onlyNames
+    ], ["MODE" => "php"]);
+?>
 <?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php"); ?>

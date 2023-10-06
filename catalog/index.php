@@ -1,5 +1,6 @@
 <?php
     require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+    $APPLICATION->SetPageProperty("description", "");
     $APPLICATION->SetPageProperty("title", "Армекс - Каталог");
     $APPLICATION->SetTitle("Армекс - Каталог");
 ?>
@@ -7,12 +8,25 @@
     <div class="breadcrumbs text_fz18 text_upper">
         <div class="container">
             <a href="/">Главная</a>
-            <img src="<?=$imgPath?>arrow-right.svg" alt="">
-            <span>Каталог</span>
+            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
+            <?php if ($_GET['search-string']) : ?>
+                <a href="/catalog/">Каталог</a>
+                <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
+                <span>Поиск</span>
+            <?php else : ?>
+                <span>Каталог</span>
+            <?php endif; ?>
         </div>
     </div>
-    <section class="catalog__filter text_fz20">
+    <section class="catalog__filter text_fz20<?=$_GET['search-string'] ? ' no-border reviews__main' : ''?>" id="search-page" data-text="<?=$_GET['search-string']?>">
         <div class="container">
+            <?php if ($_GET['search-string']) : ?>
+                <h1 class="text_fz42 text_fw600 text_upper page-h1">Поиск</h1>
+                <form action="/catalog/" class="header__search static active" method="GET">
+                    <button><img src="<?=$imgPath?>loop.svg" alt="Поиск"></button>
+                    <input type="text" name="search-string" value="<?=$_GET['search-string']?>" required>
+                </form>
+            <?php else : ?>
             <?php
                 $catsClass = CIBlockSection::GetList(
                     ["SORT" => "ASC"],
@@ -93,6 +107,7 @@
                     ?>
                 </ul>
             </div>
+            <?php endif; ?>
         </div>
     </section>
     <section class="catalog__list text_fz20">

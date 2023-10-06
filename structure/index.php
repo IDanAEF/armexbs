@@ -1,5 +1,6 @@
 <?php
     require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+    $APPLICATION->SetPageProperty("description", "");
     $APPLICATION->SetPageProperty("title", "Армекс - Структура компании");
     $APPLICATION->SetTitle("Армекс - Структура компании");
 ?>
@@ -7,7 +8,7 @@
     <div class="breadcrumbs line text_fz18 text_upper">
         <div class="container">
             <a href="/">Главная</a>
-            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
             <span>Структура компании</span>
         </div>
     </div>
@@ -150,7 +151,7 @@
     <section class="structure__func main__block text_fz18">
         <div class="container">
             <h2 class="text_fz32 text_fw600 text_upper">
-                <img src="<?=$imgPath?>star.svg" alt="">
+                <img src="<?=$imgPath?>star.svg" alt="star">
                 Функции отделов департамента автоматизации предприятий
             </h2>
             <h3 class="text_fz24 text_fw500 text_upper">Отдел по работе с клиентами</h3>
@@ -166,7 +167,7 @@
             <h3 class="text_fz24 text_fw500 text_upper">Отдел Методологии и обучения</h3>
             <p>Осуществляет обучение пользователей в рамках типовых и разработанных под заказчика программ обучения, консультирование персонала заказчика при работе с реальными данными</p>
             <h3 class="text_fz24 text_fw500 text_upper">Служба технической поддержки</h3>
-            <p>Осуществляет поддержку пользователей по телефону и электронной почте, отвечает на вопросы, связанные с функционалом типовых конфигураций 1С</p>
+            <p>Осуществляет поддержку пользователей по телефону и электронной почте, отвечает на вопросы, связанные с функционалом типовых <br>конфигураций 1С</p>
         </div>
     </section>
     <?php $APPLICATION->IncludeFile(SITE_DIR."include/sites.php", [], ["MODE" => "html"]) ?>

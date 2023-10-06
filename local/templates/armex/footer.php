@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="footer__col">
-                    <div class="footer__menu">
+                    <div class="footer__menu mb50">
                         <span class="footer__title text_fz20 text_fw600">о нас</span>
                         <ul class="footer__menu-under text_fz18">
                             <li><a href="/company/">О компании</a></li>
@@ -95,7 +95,7 @@
                     </div>
                 </div>
                 <div class="footer__col">
-                    <div class="footer__menu">
+                    <div class="footer__menu mb50">
                         <a href="/contacts/" class="footer__title text_fz20 text_fw600">контакты</a>
                         <ul class="footer__menu-under text_fz18">
                             <li>
@@ -163,7 +163,8 @@
             'title' => 'Давайте обсудим ваш проект',
             'descr' => 'Оставьте заявку и мы свяжемся с вами в ближайшее время для обсуждения деталей',
             'success' => 'save',
-            'name' => 'feedback-modal'
+            'name' => 'feedback-modal',
+            'section' => '172'
         ], ["MODE" => "php"]);
     ?>
     <?php 
@@ -171,7 +172,8 @@
             'title' => 'Не знаете, какой продукт 1С выбрать?',
             'descr' => 'Оставьте свои данные и мы свяжемся с вами и поможем с выбором',
             'success' => 'thanks',
-            'name' => 'feedback-choise'
+            'name' => 'feedback-choise',
+            'section' => '181'
         ], ["MODE" => "php"]);
     ?>
     <?php 
@@ -179,7 +181,8 @@
             'title' => 'Оставьте заявку и станьте нашим партнером',
             'descr' => 'Оставьте свои данные и мы свяжемся с вами в ближайшее время для обсуждения деталей',
             'success' => 'thanks',
-            'name' => 'feedback-partner'
+            'name' => 'feedback-partner',
+            'section' => '180'
         ], ["MODE" => "php"]);
     ?>
     <?php 
@@ -187,7 +190,8 @@
             'title' => 'Получить 30 дневный пробный доступ',
             'descr' => 'Оставьте свои данные и мы свяжемся с вами в ближайшее время',
             'success' => 'thanks',
-            'name' => 'feedback-test'
+            'name' => 'feedback-test',
+            'section' => '179'
         ], ["MODE" => "php"]);
     ?>
     <?php 
@@ -195,7 +199,8 @@
             'title' => 'Оставьте заявку на подключение',
             'descr' => 'Оставьте свои данные и мы свяжемся с вами в ближайшее время для обсуждения деталей',
             'success' => 'thanks',
-            'name' => 'feedback-join'
+            'name' => 'feedback-join',
+            'section' => '178'
         ], ["MODE" => "php"]);
     ?>
     <?php 
@@ -203,7 +208,8 @@
             'title' => 'Остались вопросы?',
             'descr' => 'Оставьте свои данные и мы свяжемся с вами в ближайшее время',
             'success' => 'thanks',
-            'name' => 'feedback-quest'
+            'name' => 'feedback-quest',
+            'section' => '177'
         ], ["MODE" => "php"]);
     ?>
     <?php 
@@ -211,7 +217,8 @@
             'title' => 'Нужна консультация специалиста?',
             'descr' => 'Оставьте свои данные и мы свяжемся с вами в ближайшее время',
             'success' => 'thanks',
-            'name' => 'feedback-consult'
+            'name' => 'feedback-consult',
+            'section' => '176'
         ], ["MODE" => "php"]);
     ?>
     <?php 
@@ -219,7 +226,8 @@
             'title' => 'Оставьте заявку на подключение и получите подарок',
             'descr' => 'Оставьте свои данные и мы свяжемся с вами в ближайшее время для обсуждения деталей',
             'success' => 'thanks',
-            'name' => 'feedback-gift'
+            'name' => 'feedback-gift',
+            'section' => '175'
         ], ["MODE" => "php"]);
     ?>
     <div class="feedback-modal modal body-click-content" data-content="feedback-error">
@@ -227,7 +235,11 @@
         <div class="main__feedback-top">
             <h2 class="text_fz32 text_fw400">Сообщить об ошибке</h2>
         </div>
-        <form action="" class="main__feedback-form text_fz18 text_fw300" data-success="error">
+        <form action="/ajax/forms.php" class="main__feedback-form text_fz18 text_fw300" data-success="error">
+            <input type="text" name="feedsection" value="174" hidden>
+            <input type="text" name="feedevent" value="33" hidden>
+            <input type="text" name="feedtheme" value="Сообщить об ошибке" hidden>
+            <input type="text" name="feedurl" value="<?=$_SERVER['HTTP_HOST']?><?=$_SERVER['REQUEST_URI']?>" hidden>
             <div class="main__feedback-form-col">
                 <span class="text_fw700">Комментарий</span>
                 <textarea name="feedcomment" required></textarea>
@@ -274,8 +286,8 @@
     <div class="gallery__overlay">
         <div class="gallery__overlay-block">
             <span class="modal-close gallery__overlay-close"></span>
-            <img src="<?=$imgPath?>arrow-circle-right.svg" alt="" class="gallery__overlay-arrow left">
-            <img src="<?=$imgPath?>arrow-circle-right.svg" alt="" class="gallery__overlay-arrow right">
+            <img src="<?=$imgPath?>arrow-circle-right.svg" alt="arrow-circle-right" class="gallery__overlay-arrow left">
+            <img src="<?=$imgPath?>arrow-circle-right.svg" alt="arrow-circle-right" class="gallery__overlay-arrow right">
             
         </div>
     </div>

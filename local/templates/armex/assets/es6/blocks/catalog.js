@@ -88,13 +88,18 @@ const catalog = () => {
     try {
         const catalogList = document.querySelector('#catalog'),
               catalogBtn = document.querySelector('#catalog-more'),
-              sorts = document.querySelectorAll('#sort-filter > li');
+              sorts = document.querySelectorAll('#sort-filter > li'),
+              searchPage = document.querySelector('#search-page');
 
         let onPage,
             currPage,
             visible = catalogList.getAttribute('data-visible') ? +catalogList.getAttribute('data-visible').trim() : 12;
 
         const outItems = (reset = false) => {
+            let loader = document.createElement('div');
+            loader.classList.add('global-load');
+            catalogList.append(loader);
+
             currPage = +catalogBtn.getAttribute('data-page');
 
             if (reset) currPage = 1;
@@ -104,11 +109,15 @@ const catalog = () => {
             data.append('visible', visible);
             if (catalogList.getAttribute('data-cat'))
                 data.append('cat', catalogList.getAttribute('data-cat'));
+            if (searchPage)
+                data.append('search-string', searchPage.getAttribute('data-text').trim());
 
             onPage = currPage * visible;
 
             postData('/ajax/products.php', data)
             .then((res) => {
+                loader.remove();
+
                 if (reset) {
                     catalogList.innerHTML = res;
                     catalogBtn.style.display = '';

@@ -140,7 +140,7 @@ img, svg
             &:last-child
                 td 
                     border-bottom: none
-input, textarea 
+input, textarea, .form-list__head 
     border-radius: 40px
     padding: 16px 20px
     border: 2px solid $base-color
@@ -179,6 +179,58 @@ button, .button
                     fill: #fff
     &:hover 
         background: $base-color-active
+.form-list 
+    position: relative
+    &__head 
+        color: #696969
+        display: flex
+        align-items: center
+        justify-content: space-between
+        cursor: pointer
+        span 
+            margin: 0 !important
+            padding: 0 !important
+            pointer-events: none
+        img 
+            margin-left: 10px
+            transition: 0.3s transform
+            pointer-events: none
+        &.active 
+            img 
+                transform: rotate(180deg)
+    &__items 
+        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.10)
+        background: #fff
+        position: absolute
+        bottom: 100%
+        left: 0
+        width: 100%
+        max-height: 264px
+        overflow: auto
+        scrollbar-width: thin
+        scrollbar-color: #696969 #E2E2E2
+        opacity: 0
+        visibility: hidden
+        transition: 0.3s all 
+        &.active 
+            opacity: 1
+            visibility: visible
+        &::-webkit-scrollbar
+            width: 5px
+            height: 5px
+        &::-webkit-scrollbar-track
+            background: #E2E2E2
+        &::-webkit-scrollbar-thumb 
+            background-color: #696969
+            border-radius: 5px
+        span 
+            padding: 6px 10px
+            display: block
+            cursor: pointer
+            transition: 0.3s background
+            margin: 0 !important
+            &:hover 
+                background: #F4F4F4
 .dots
     display: flex
     align-items: center
@@ -259,3 +311,8 @@ table
     overflow: auto
     table 
         min-width: 635px
+.global-load
+    width: 55px
+    height: 55px
+    animation: spin 0.5s linear infinite
+    background: url('../images/loader.png') center center/cover no-repeat

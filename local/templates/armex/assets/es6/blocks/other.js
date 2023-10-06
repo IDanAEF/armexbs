@@ -37,7 +37,7 @@ const other = () => {
 
     try {
         //header search
-        const searchForm = document.querySelector('.header__search'),
+        const searchForm = document.querySelector('.header .header__search'),
               menuList = document.querySelector('.header__menu-list'),
               searchBtn = searchForm.querySelector('button'),
               searchInput = searchForm.querySelector('input');
@@ -54,9 +54,11 @@ const other = () => {
             }
         });
 
-        searchInput.addEventListener('blur', () => {
-            searchForm.classList.remove('active');
-            menuList.classList.remove('search-open');
+        document.documentElement.addEventListener('click', (e) => {
+            if (e.target != searchInput && e.target != searchBtn) {
+                searchForm.classList.remove('active');
+                menuList.classList.remove('search-open');
+            }
         });
     } catch (e) {
         console.log(e.stack);

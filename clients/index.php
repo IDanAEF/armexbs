@@ -1,5 +1,6 @@
 <?php
     require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+    $APPLICATION->SetPageProperty("description", "");
     $APPLICATION->SetPageProperty("title", "Армекс - Клиенты");
     $APPLICATION->SetTitle("Армекс - Клиенты");
 
@@ -25,14 +26,14 @@
             'nPageSize' => $onPage,
             'iNumPage' => $page
         ],
-        ['ID', 'NAME', 'PREVIEW_PICTURE', 'PREVIEW_TEXT']
+        ['ID', 'NAME', 'PREVIEW_PICTURE', 'PREVIEW_TEXT', 'PROPERTY_WEBSITE']
     );
 ?>
 <main class="clients">
     <div class="breadcrumbs line text_fz18 text_upper">
         <div class="container">
             <a href="/">Главная</a>
-            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
             <span>Клиенты</span>
         </div>
     </div>
@@ -44,8 +45,8 @@
                 <?php
                     while ($client = $clients->Fetch()) {
                         ?>
-                        <a href="/clients/client<?=$client['ID']?>/" class="clients__item">
-                            <img src="<?=CFile::GetPath($client['PREVIEW_PICTURE'])?>" alt="">
+                        <a href="<?=$client['PROPERTY_WEBSITE_VALUE']?>" target="_blank" class="clients__item">
+                            <img src="<?=CFile::GetPath($client['PREVIEW_PICTURE'])?>" alt="<?=$client['NAME']?>">
                             <h3 class="text_fz20 text_fw600"><?=$client['NAME']?></h3>
                             <?=$client['PREVIEW_TEXT']?>
                         </a>

@@ -1,5 +1,6 @@
 <?php
     require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+    $APPLICATION->SetPageProperty("description", "");
     $APPLICATION->SetPageProperty("title", "Армекс - Подарки");
     $APPLICATION->SetTitle("Армекс - Подарки");
 ?>
@@ -7,7 +8,7 @@
     <div class="breadcrumbs line text_fz18 text_upper">
         <div class="container">
             <a href="/">Главная</a>
-            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
             <span>Подарки</span>
         </div>
     </div>
@@ -51,7 +52,7 @@
         <div class="container">
             <div class="gifts__parts-col text_fz18">
                 <div class="gifts__parts-title text_fz20 text_red text_fw600 text_upper">
-                    <img src="<?=$imgPath?>gift.svg" alt="">
+                    <img src="<?=$imgPath?>gift.svg" alt="Подарочные сертификаты">
                     Подарочные <br>сертификаты
                 </div>
                 <ul class="gifts__parts-list text_fz20">
@@ -113,7 +114,7 @@
             </div>
             <div class="gifts__parts-col text_fz18">
                 <div class="gifts__parts-title text_fz20 text_red text_fw600 text_upper">
-                    <img src="<?=$imgPath?>comp.svg" alt="">
+                    <img src="<?=$imgPath?>comp.svg" alt="Услуги нашей компании">
                     Услуги <br>нашей компании
                 </div>
                 <ul class="gifts__parts-list text_fz20">
@@ -154,16 +155,16 @@
             <div class="gifts__clients-col">
                 <h2 class="text_fz24 text_fw500 text_upper text_center">наши статусы</h2>
                 <div class="gifts__clients-stats">
-                    <img src="<?=$beforePath?>gifts/statuses1.png" alt="">
-                    <img src="<?=$beforePath?>gifts/statuses2.png" alt="">
-                    <img src="<?=$beforePath?>gifts/statuses3.png" alt="" class="desk">
-                    <img src="<?=$beforePath?>gifts/statuses4.png" alt="">
-                    <img src="<?=$beforePath?>gifts/statuses5.png" alt="">
-                    <img src="<?=$beforePath?>gifts/statuses3.png" alt="" class="mobile">
+                    <img src="<?=$beforePath?>gifts/statuses1.png" alt="status1">
+                    <img src="<?=$beforePath?>gifts/statuses2.png" alt="status2">
+                    <img src="<?=$beforePath?>gifts/statuses3.png" alt="status3" class="desk">
+                    <img src="<?=$beforePath?>gifts/statuses4.png" alt="status4">
+                    <img src="<?=$beforePath?>gifts/statuses5.png" alt="status5">
+                    <img src="<?=$beforePath?>gifts/statuses3.png" alt="status3" class="mobile">
                 </div>
                 <a href="/statuses/" class="button text_fz20">
                     Все статусы
-                    <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                    <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                 </a>
             </div>
             <div class="gifts__clients-col">
@@ -178,7 +179,7 @@
                 </div>
                 <a href="/clients/" class="button text_fz20">
                     Все клиенты
-                    <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                    <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                 </a>
             </div>
         </div>

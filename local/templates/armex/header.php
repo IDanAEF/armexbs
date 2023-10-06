@@ -14,7 +14,13 @@
         'PROPERTY_ADDRESS',
         'PROPERTY_EMAIL',
         'PROPERTY_TIME',
-        'PROPERTY_MAP'
+        'PROPERTY_MAP',
+        'PROPERTY_TECH_PHONE',
+        'PROPERTY_TECH_MAIL',
+        'PROPERTY_TECH_SKYPE_NAME',
+        'PROPERTY_TECH_SKYPE_LINK',
+        'PROPERTY_TECH_HELPDESK',
+        'PROPERTY_GARANT_MAIL'
     ];
     $contactsFetch = CIBlockElement::GetList([], ['IBLOCK_ID' => 46, 'ID' => 2157], false, false, $contProps)->Fetch();
     $contacts = [
@@ -23,12 +29,17 @@
         'email' => $contactsFetch['PROPERTY_EMAIL_VALUE'],
         'phone' => $contactsFetch['PROPERTY_PHONE_VALUE'],
         'map' => $contactsFetch['PROPERTY_MAP_VALUE'],
+        'tech-phone' => $contactsFetch['PROPERTY_TECH_PHONE_VALUE'],
+        'tech-mail' => $contactsFetch['PROPERTY_TECH_MAIL_VALUE'],
+        'tech-skype-name' => $contactsFetch['PROPERTY_TECH_SKYPE_NAME_VALUE'],
+        'tech-skype-link' => $contactsFetch['PROPERTY_TECH_SKYPE_LINK_VALUE'],
+        'tech-helpdesk' => $contactsFetch['PROPERTY_TECH_HELPDESK_VALUE'],
+        'garant-mail' => $contactsFetch['PROPERTY_GARANT_MAIL_VALUE'],
     ];
 ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
         $assetInstance->addCss(SITE_TEMPLATE_PATH."/assets/css/style.min.css");
@@ -38,8 +49,6 @@
         $assetInstance->addJs(SITE_TEMPLATE_PATH."/custom.js");
     ?>
     <title><?php $APPLICATION->ShowTitle() ?></title>
-    <?$APPLICATION->ShowMeta("keywords")?>
-    <?$APPLICATION->ShowMeta("description")?>
 
     <?php $APPLICATION->ShowHead() ?>
 </head>
@@ -110,9 +119,9 @@
                             }
                         ?>
                     </ul>
-                    <form action="" class="header__search">
+                    <form action="/catalog/" class="header__search static" method="GET">
                         <button><img src="<?=$imgPath?>loop.svg" alt="Поиск"></button>
-                        <input type="text" name="search-string" required>
+                        <input type="text" name="search-string" value="<?=$_GET['search-string']?>" required>
                     </form>
                 </nav>
                 <div class="header__phone">

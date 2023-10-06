@@ -9,7 +9,7 @@ const forms = () => {
     }
 
     try {
-        const forms = document.querySelectorAll('form');
+        const forms = document.querySelectorAll('form:not(.static)');
 
         forms.forEach(form => {
             const inputs = form.querySelectorAll('input'),
@@ -37,6 +37,41 @@ const forms = () => {
                 .then((res) => {
                     successModal.classList.add('active');
                 });
+            });
+        });
+    } catch (e) {
+        console.log(e.stack);
+    }
+
+    try {
+        //forms lists
+        const formLists = document.querySelectorAll('.form-list');
+
+        formLists.forEach(list => {
+            const listInput = list.querySelector('input'),
+                  listItems = list.querySelectorAll('.form-list__item'),
+                  listTitle = list.querySelector('.form-list__head');
+            
+            listTitle.addEventListener('click', () => {
+                listTitle.classList.toggle('active');
+                listTitle.nextElementSibling.classList.toggle('active');
+            });
+
+            listItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    listTitle.classList.remove('active');
+                    listTitle.nextElementSibling.classList.remove('active');
+
+                    listInput.value = item.textContent.trim();
+                    listTitle.querySelector('span').textContent = item.textContent.trim();
+                });
+            });
+
+            document.documentElement.addEventListener('click', (e) => {
+                if (e.target != listTitle) {
+                    listTitle.classList.remove('active');
+                    listTitle.nextElementSibling.classList.remove('active');
+                }
             });
         });
     } catch (e) {

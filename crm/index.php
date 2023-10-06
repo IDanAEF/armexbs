@@ -1,5 +1,6 @@
 <?php
     require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+    $APPLICATION->SetPageProperty("description", "");
     $APPLICATION->SetPageProperty("title", "Армекс - CRM Битрикс24");
     $APPLICATION->SetTitle("Армекс - CRM Битрикс24");
 ?>
@@ -7,7 +8,7 @@
     <div class="breadcrumbs line text_fz18 text_upper">
         <div class="container">
             <a href="/">Главная</a>
-            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
             <span>CRM Битрикс24</span>
         </div>
     </div>
@@ -46,15 +47,15 @@
         <div class="grm__points text_fz20 text_center">
             <div class="container three">
                 <div class="grm__point">
-                    <img src="<?=$beforePath?>points/point12.png" alt="">
+                    <img src="<?=$beforePath?>points/point12.png" alt="Сертифицированный партнер компании «1С-Битрикс»">
                     <span class="text_fw500">Сертифицированный партнер компании <br>«1С-Битрикс»</span>
                 </div>
                 <div class="grm__point">
-                    <img src="<?=$beforePath?>points/point13.png" alt="">
+                    <img src="<?=$beforePath?>points/point13.png" alt="Комплекс услуг: продажа, внедрение и обслуживание Битрикс24">
                     <span class="text_fw500">Комплекс услуг: продажа, внедрение и обслуживание Битрикс24</span>
                 </div>
                 <div class="grm__point">
-                    <img src="<?=$beforePath?>points/point14.png" alt="">
+                    <img src="<?=$beforePath?>points/point14.png" alt="Качественные интеграции с продуктами 1С">
                     <span class="text_fw500">Качественные интеграции <br>с продуктами 1С</span>
                 </div>
             </div>
@@ -73,47 +74,47 @@
         <div class="grm__points text_fz20 text_center">
             <div class="container three">
                 <div class="grm__point">
-                    <img src="<?=$beforePath?>points/point15.png" alt="">
+                    <img src="<?=$beforePath?>points/point15.png" alt="Живая лента">
                     <span class="text_fw500">Живая лента</span>
                     Обмен сообщениями, оповещения, объявления и тд.
                 </div>
                 <div class="grm__point">
-                    <img src="<?=$beforePath?>points/point16.png" alt="">
+                    <img src="<?=$beforePath?>points/point16.png" alt="Задачи">
                     <span class="text_fw500">Задачи</span>
                     Постановка, контроль, делегирование и оценка исполнения
                 </div>
                 <div class="grm__point">
-                    <img src="<?=$beforePath?>points/point17.png" alt="">
+                    <img src="<?=$beforePath?>points/point17.png" alt="Чат и видео">
                     <span class="text_fw500">Чат и видео</span>
                     Корпоративный мессенджер и бизнес-чат
                 </div>
                 <div class="grm__point">
-                    <img src="<?=$beforePath?>points/point18.png" alt="">
+                    <img src="<?=$beforePath?>points/point18.png" alt="Открытые линии">
                     <span class="text_fw500">Открытые линии</span>
                     Объединение <br>онлайн-коммуникаций с клиентами
                 </div>
                 <div class="grm__point">
-                    <img src="<?=$beforePath?>points/point19.png" alt="">
+                    <img src="<?=$beforePath?>points/point19.png" alt="Документы">
                     <span class="text_fw500">Документы</span>
                     Совместная работа в документах Google Docs и Microsoft Office
                 </div>
                 <div class="grm__point">
-                    <img src="<?=$beforePath?>points/point20.png" alt="">
+                    <img src="<?=$beforePath?>points/point20.png" alt="CRM-система">
                     <span class="text_fw500">CRM-система</span>
                     Объединение всех каналов коммуникаций с клиентами
                 </div>
                 <div class="grm__point">
-                    <img src="<?=$beforePath?>points/point21.png" alt="">
+                    <img src="<?=$beforePath?>points/point21.png" alt="Диск">
                     <span class="text_fw500">Диск</span>
                     Облачное хранение данных
                 </div>
                 <div class="grm__point">
-                    <img src="<?=$beforePath?>points/point22.png" alt="">
+                    <img src="<?=$beforePath?>points/point22.png" alt="Почта">
                     <span class="text_fw500">Почта</span>
                     Готовый почтовый сервер для вашей компании
                 </div>
                 <div class="grm__point">
-                    <img src="<?=$beforePath?>points/point23.png" alt="">
+                    <img src="<?=$beforePath?>points/point23.png" alt="IP-телефония">
                     <span class="text_fw500">IP-телефония</span>
                     Обеспечение приема звонков и вызовов абонентов
                 </div>

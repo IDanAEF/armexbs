@@ -1,14 +1,15 @@
 <?php
     require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-    $APPLICATION->SetPageProperty("title", "Армекс - Отраслевые продукты 1С");
-    $APPLICATION->SetTitle("Армекс - Отраслевые продукты 1С");
+    $APPLICATION->SetPageProperty("description", "");
+    $APPLICATION->SetPageProperty("title", "Армекс - 1C для вашей отрасли");
+    $APPLICATION->SetTitle("Армекс - 1C для вашей отрасли");
 ?>
 <main class="industr">
     <div class="breadcrumbs line text_fz18 text_upper">
         <div class="container">
             <a href="/">Главная</a>
-            <img src="<?=$imgPath?>arrow-right.svg" alt="">
-            <span>Отраслевые продукты 1С</span>
+            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
+            <span>1C для вашей отрасли</span>
         </div>
     </div>
     <?php $APPLICATION->IncludeFile(SITE_DIR."include/pages-promo.php", ['id' => 2170], ["MODE" => "php"]) ?>
@@ -21,15 +22,15 @@
     <section class="industr__list main__block">
         <div class="container">
             <div class="industr__item">
-                <img src="<?=$beforePath?>industr/industr1.png" alt="" class="icon">
+                <img src="<?=$beforePath?>industr/industr1.png" alt="Сельское и лесное хозяйство" class="icon">
                 <div class="industr__item-main text_fz20 text_fw300">
-                    <div class="industr__item-head text_fz24 text_upper">
-                        <img src="<?=$beforePath?>industr/industr1.png" alt="" class="icon">
+                    <div class="industr__item-head text_fz24 text_fw400 text_upper">
+                        <img src="<?=$beforePath?>industr/industr1.png" alt="Сельское и лесное хозяйство" class="icon">
                         Сельское и лесное хозяйство
                     </div>
                     <div class="industr__item-points">
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Сельское хозяйство
                         </div>
                         <div class="industr__item-detail">
@@ -59,7 +60,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Лесное хозяйство
                         </div>
                         <div class="industr__item-detail">
@@ -80,15 +81,15 @@
                 </div>
             </div>
             <div class="industr__item">
-                <img src="<?=$beforePath?>industr/industr2.png" alt="" class="icon">
+                <img src="<?=$beforePath?>industr/industr2.png" alt="Производство, ТЭК" class="icon">
                 <div class="industr__item-main text_fz20 text_fw300">
-                    <div class="industr__item-head text_fz24 text_upper">
-                        <img src="<?=$beforePath?>industr/industr2.png" alt="" class="icon">
+                    <div class="industr__item-head text_fz24 text_fw400 text_upper">
+                        <img src="<?=$beforePath?>industr/industr2.png" alt="Производство, ТЭК" class="icon">
                         Производство, ТЭК
                     </div>
                     <div class="industr__item-points">
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Пищевая промышленность
                         </div>
                         <div class="industr__item-detail">
@@ -138,7 +139,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Топливно-энергетический комплекс
                         </div>
                         <div class="industr__item-detail">
@@ -180,7 +181,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Машиностроение
                         </div>
                         <div class="industr__item-detail">
@@ -210,7 +211,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Металлургия
                         </div>
                         <div class="industr__item-detail">
@@ -240,7 +241,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Переработка отходов и вторсырья
                         </div>
                         <div class="industr__item-detail">
@@ -270,7 +271,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Издательства и полиграфия
                         </div>
                         <div class="industr__item-detail">
@@ -288,7 +289,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Производство строительных материалов
                         </div>
                         <div class="industr__item-detail">
@@ -322,7 +323,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Горнодобывающая промышленность
                         </div>
                         <div class="industr__item-detail">
@@ -355,15 +356,15 @@
                 </div>
             </div>
             <div class="industr__item">
-                <img src="<?=$beforePath?>industr/industr3.png" alt="" class="icon">
+                <img src="<?=$beforePath?>industr/industr3.png" alt="торговля, склад, логистика, транспорт" class="icon">
                 <div class="industr__item-main text_fz20 text_fw300">
-                    <div class="industr__item-head text_fz24 text_upper">
-                        <img src="<?=$beforePath?>industr/industr3.png" alt="" class="icon">
+                    <div class="industr__item-head text_fz24 text_fw400 text_upper">
+                        <img src="<?=$beforePath?>industr/industr3.png" alt="торговля, склад, логистика, транспорт" class="icon">
                         торговля, склад, логистика, транспорт
                     </div>
                     <div class="industr__item-points">
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Торговля
                         </div>
                         <div class="industr__item-detail">
@@ -429,7 +430,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Склад
                         </div>
                         <div class="industr__item-detail">
@@ -443,7 +444,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Логистика
                         </div>
                         <div class="industr__item-detail">
@@ -461,7 +462,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Транспорт
                         </div>
                         <div class="industr__item-detail">
@@ -498,15 +499,15 @@
                 </div>
             </div>
             <div class="industr__item">
-                <img src="<?=$beforePath?>industr/industr4.png" alt="" class="icon">
+                <img src="<?=$beforePath?>industr/industr4.png" alt="финансовый сектор" class="icon">
                 <div class="industr__item-main text_fz20 text_fw300">
-                    <div class="industr__item-head text_fz24 text_upper">
-                        <img src="<?=$beforePath?>industr/industr4.png" alt="" class="icon">
+                    <div class="industr__item-head text_fz24 text_fw400 text_upper">
+                        <img src="<?=$beforePath?>industr/industr4.png" alt="финансовый сектор" class="icon">
                         финансовый сектор
                     </div>
                     <div class="industr__item-points">
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Страхование
                         </div>
                         <div class="industr__item-detail">
@@ -528,7 +529,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Ломбард
                         </div>
                         <div class="industr__item-detail">
@@ -550,7 +551,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Лизинг
                         </div>
                         <div class="industr__item-detail">
@@ -568,7 +569,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Кредитные организации
                         </div>
                         <div class="industr__item-detail">
@@ -582,7 +583,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Некредитные финансовые организации
                         </div>
                         <div class="industr__item-detail">
@@ -639,15 +640,15 @@
                 </div>
             </div>
             <div class="industr__item">
-                <img src="<?=$beforePath?>industr/industr5.png" alt="" class="icon">
+                <img src="<?=$beforePath?>industr/industr5.png" alt="Строительство, девелопмент, ЖКХ" class="icon">
                 <div class="industr__item-main text_fz20 text_fw300">
-                    <div class="industr__item-head text_fz24 text_upper">
-                        <img src="<?=$beforePath?>industr/industr5.png" alt="" class="icon">
+                    <div class="industr__item-head text_fz24 text_fw400 text_upper">
+                        <img src="<?=$beforePath?>industr/industr5.png" alt="Строительство, девелопмент, ЖКХ" class="icon">
                         Строительство, девелопмент, ЖКХ
                     </div>
                     <div class="industr__item-points">
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Строительство
                         </div>
                         <div class="industr__item-detail">
@@ -709,7 +710,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Девелопмент
                         </div>
                         <div class="industr__item-detail">
@@ -743,7 +744,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             ЖКХ
                         </div>
                         <div class="industr__item-detail">
@@ -793,7 +794,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Недвижимость
                         </div>
                         <div class="industr__item-detail">
@@ -846,15 +847,15 @@
                 </div>
             </div>
             <div class="industr__item">
-                <img src="<?=$beforePath?>industr/industr6.png" alt="" class="icon">
+                <img src="<?=$beforePath?>industr/industr6.png" alt="общественное и плановое питание, гостиничный бизнес" class="icon">
                 <div class="industr__item-main text_fz20 text_fw300">
-                    <div class="industr__item-head text_fz24 text_upper">
-                        <img src="<?=$beforePath?>industr/industr6.png" alt="" class="icon">
+                    <div class="industr__item-head text_fz24 text_fw400 text_upper">
+                        <img src="<?=$beforePath?>industr/industr6.png" alt="общественное и плановое питание, гостиничный бизнес" class="icon">
                         общественное и плановое питание, гостиничный бизнес
                     </div>
                     <div class="industr__item-points">
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Рестораны и общественное питание
                         </div>
                         <div class="industr__item-detail">
@@ -884,7 +885,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Плановое питание
                         </div>
                         <div class="industr__item-detail">
@@ -910,7 +911,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Гостиничный бизнес
                         </div>
                         <div class="industr__item-detail">
@@ -935,15 +936,15 @@
                 </div>
             </div>
             <div class="industr__item">
-                <img src="<?=$beforePath?>industr/industr7.png" alt="" class="icon">
+                <img src="<?=$beforePath?>industr/industr7.png" alt="образование, культура" class="icon">
                 <div class="industr__item-main text_fz20 text_fw300">
-                    <div class="industr__item-head text_fz24 text_upper">
-                        <img src="<?=$beforePath?>industr/industr7.png" alt="" class="icon">
+                    <div class="industr__item-head text_fz24 text_fw400 text_upper">
+                        <img src="<?=$beforePath?>industr/industr7.png" alt="образование, культура" class="icon">
                         образование, культура
                     </div>
                     <div class="industr__item-points">
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             ВУЗы
                         </div>
                         <div class="industr__item-detail">
@@ -969,7 +970,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Колледжи (СПО)
                         </div>
                         <div class="industr__item-detail">
@@ -999,7 +1000,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Школы
                         </div>
                         <div class="industr__item-detail">
@@ -1033,7 +1034,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Дошкольные учреждения
                         </div>
                         <div class="industr__item-detail">
@@ -1059,7 +1060,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Дополнительное образование
                         </div>
                         <div class="industr__item-detail">
@@ -1085,7 +1086,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Учреждения культуры
                         </div>
                         <div class="industr__item-detail">
@@ -1119,7 +1120,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Библиотеки
                         </div>
                         <div class="industr__item-detail">
@@ -1140,15 +1141,15 @@
                 </div>
             </div>
             <div class="industr__item">
-                <img src="<?=$beforePath?>industr/industr8.png" alt="" class="icon">
+                <img src="<?=$beforePath?>industr/industr8.png" alt="Здравоохранение, медицина" class="icon">
                 <div class="industr__item-main text_fz20 text_fw300">
-                    <div class="industr__item-head text_fz24 text_upper">
-                        <img src="<?=$beforePath?>industr/industr8.png" alt="" class="icon">
+                    <div class="industr__item-head text_fz24 text_fw400 text_upper">
+                        <img src="<?=$beforePath?>industr/industr8.png" alt="Здравоохранение, медицина" class="icon">
                         Здравоохранение, медицина
                     </div>
                     <div class="industr__item-points">
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Поликлиники
                         </div>
                         <div class="industr__item-detail">
@@ -1178,7 +1179,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Стационары
                         </div>
                         <div class="industr__item-detail">
@@ -1208,7 +1209,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Санатории
                         </div>
                         <div class="industr__item-detail">
@@ -1230,7 +1231,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Фармацевтика
                         </div>
                         <div class="industr__item-detail">
@@ -1255,15 +1256,15 @@
                 </div>
             </div>
             <div class="industr__item">
-                <img src="<?=$beforePath?>industr/industr9.png" alt="" class="icon">
+                <img src="<?=$beforePath?>industr/industr9.png" alt="Профессиональные услуги" class="icon">
                 <div class="industr__item-main text_fz20 text_fw300">
-                    <div class="industr__item-head text_fz24 text_upper">
-                        <img src="<?=$beforePath?>industr/industr9.png" alt="" class="icon">
+                    <div class="industr__item-head text_fz24 text_fw400 text_upper">
+                        <img src="<?=$beforePath?>industr/industr9.png" alt="Профессиональные услуги" class="icon">
                         Профессиональные услуги
                     </div>
                     <div class="industr__item-points">
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Управление имуществом
                         </div>
                         <div class="industr__item-detail">
@@ -1277,7 +1278,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Сервисно-ремонтные организации
                         </div>
                         <div class="industr__item-detail">
@@ -1295,7 +1296,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Проектные организации
                         </div>
                         <div class="industr__item-detail">
@@ -1317,7 +1318,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             ИТ-услуги
                         </div>
                         <div class="industr__item-detail">
@@ -1343,7 +1344,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Рекламные агентства
                         </div>
                         <div class="industr__item-detail">
@@ -1357,7 +1358,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Салоны красоты, SPA, фитнес-клубы
                         </div>
                         <div class="industr__item-detail">
@@ -1379,7 +1380,7 @@
                             </div>
                         </div>
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Ритуальные услуги
                         </div>
                         <div class="industr__item-detail">
@@ -1396,15 +1397,15 @@
                 </div>
             </div>
             <div class="industr__item">
-                <img src="<?=$beforePath?>industr/industr10.png" alt="" class="icon">
+                <img src="<?=$beforePath?>industr/industr10.png" alt="Государственное и муниципальное управление" class="icon">
                 <div class="industr__item-main text_fz20 text_fw300">
-                    <div class="industr__item-head text_fz24 text_upper">
-                        <img src="<?=$beforePath?>industr/industr10.png" alt="" class="icon">
+                    <div class="industr__item-head text_fz24 text_fw400 text_upper">
+                        <img src="<?=$beforePath?>industr/industr10.png" alt="Государственное и муниципальное управление" class="icon">
                         Государственное и муниципальное управление
                     </div>
                     <div class="industr__item-points">
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Государственное и муниципальное управление
                         </div>
                         <div class="industr__item-detail">
@@ -1429,15 +1430,15 @@
                 </div>
             </div>
             <div class="industr__item">
-                <img src="<?=$beforePath?>industr/industr11.png" alt="" class="icon">
+                <img src="<?=$beforePath?>industr/industr11.png" alt="Некоммерческие организации" class="icon">
                 <div class="industr__item-main text_fz20 text_fw300">
-                    <div class="industr__item-head text_fz24 text_upper">
-                        <img src="<?=$beforePath?>industr/industr11.png" alt="" class="icon">
+                    <div class="industr__item-head text_fz24 text_fw400 text_upper">
+                        <img src="<?=$beforePath?>industr/industr11.png" alt="Некоммерческие организации" class="icon">
                         Некоммерческие организации
                     </div>
                     <div class="industr__item-points">
                         <div class="industr__item-point sitemaps__row parent">
-                            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+                            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                             Некоммерческие организации
                         </div>
                         <div class="industr__item-detail">
@@ -1459,7 +1460,7 @@
             </div>
         </div>
     </section>
-    <?php $APPLICATION->IncludeFile(SITE_DIR."include/feedback-fresh.php", [], ["MODE" => "html"]) ?>
+    <?php $APPLICATION->IncludeFile(SITE_DIR."include/feedback.php", ['fresh' => true], ["MODE" => "html"]) ?>
     <?php $APPLICATION->IncludeFile(SITE_DIR."include/sites.php", [], ["MODE" => "html"]) ?>
 </main>
 <?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php"); ?>

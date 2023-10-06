@@ -38,23 +38,23 @@
     <div class="breadcrumbs line text_fz18 text_upper">
         <div class="container">
             <a href="/">Главная</a>
-            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
             <a href="/catalog/">каталог</a>
-            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
             <span><?=$product['NAME']?></span>
         </div>
     </div>
     <section class="product__promo main__block">
         <div class="container">
             <div class="product__promo-text">
-                <h1 class="text_fz36 text_upper text_fw400"><?=$product['NAME']?></h1>
+                <h1 class="text_fz36 text_upper text_fw400" id="product-name"><?=$product['NAME']?></h1>
                 <img src="<?=CFile::GetPath($product['DETAIL_PICTURE'])?>" alt="<?=$product['NAME']?>" class="product__promo-image mobile">
                 <div class="product__promo-descr text_fz18 text_fw300">
                     <?=$product['UF_PREVIEW']?>
                 </div>
                 <div class="product__promo-price text_fz24"><?=$product['UF_PRICE']?></div>
-                <div class="product__promo-buttons text_fz20 text_fw700">
-                    <button class="body-click-target" data-content="feedback-join">Оставить заявку</button>
+                <div class="product__promo-buttons text_fz20 text_fw700" data-sect="<?=$prodId?>">
+                    <button class="body-click-target" data-content="feedback-join" id="product-feed-btn">Оставить заявку</button>
                     <button class="border body-click-target" data-content="feedback-quest">Задать вопрос</button>
                 </div>
             </div>
@@ -62,14 +62,14 @@
         </div>
     </section>
     <?php $APPLICATION->IncludeFile(SITE_DIR."include/usage.php", [], ["MODE" => "html"]) ?>
-    <section class="product__banner main__block">
+    <section class="product__banner small main__block">
         <div class="container">
             <h2 class="text_fz36 text_fw600 text_white text_upper">Приобретайте продукты — получайте подарки</h2>
             <picture>
                 <source srcset="<?=$beforePath?>product-banner-mobile.png" media="(max-width: 576px)" />
                 <img src="<?=$beforePath?>product-banner.png" alt="Приобретайте продукты — получайте подарки">
             </picture>
-            <a href="/gifts/" class="button text_fz24 text_fw700">Подробнее</a>
+            <!-- <a href="/gifts/" class="button text_fz24 text_fw700">Подробнее</a> -->
         </div>
     </section>
     <section class="product__parts text_fz20 text_fw700">
@@ -105,14 +105,14 @@
                         ?>
                         <div class="product__types-item">
                             <div class="product__types-head text_fz24 text_fw600">
-                                <div class="name"><?=$type['name']?></div>
+                                <div class="name version-feed-name"><?=$type['name']?></div>
                                 <div class="price"><?=$type['price']?></div>
                             </div>
                             <div class="product__types-descr text_fz20">
                                 <?=$type['text']?>
                             </div>
                             <div class="product__types-price text_fz36 text_fw600"><?=$type['price']?></div>
-                            <button class="text_fz20 text_fw700 body-click-target" data-content="feedback-join">Оставить заявку</button>
+                            <button class="text_fz20 text_fw700 body-click-target version-feed-btn" data-content="feedback-join">Оставить заявку</button>
                         </div>
                         <?php
                     }
@@ -139,14 +139,14 @@
                     foreach($product['UF_CLIENT'] as $client) {
                         $clientPict = CIBlockElement::GetList(
                             ["SORT" => "ASC"],
-                            ['IBLOCK_ID' => 34, 'ID' => $client],
+                            ['IBLOCK_ID' => 52, 'ID' => $client],
                             false,
                             false,
-                            ['PREVIEW_PICTURE']
+                            ['NAME', 'PREVIEW_PICTURE']
                         )->Fetch();
                         ?>
                         <div class="product__clients-item">
-                            <img src="<?=CFile::GetPath($clientPict['PREVIEW_PICTURE'])?>" alt="">
+                            <img src="<?=CFile::GetPath($clientPict['PREVIEW_PICTURE'])?>" alt="<?=$clientPict['NAME']?>">
                         </div>
                         <?php
                     }

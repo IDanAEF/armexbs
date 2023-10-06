@@ -14,6 +14,29 @@
     max-height: 80px;
     height: 80px;
 }
+.catalog__filter.no-border {
+    border: none;
+}
+.catalog__filter.no-border .container {
+    display: block;
+}
+.catalog__filter .header__search {
+    position: relative;
+    width: 100%;
+}
+.catalog__filter .header__search input {
+    position: static;
+    transform: none;
+}
+.company__banner picture,
+.company__mission picture,
+.company__work-item picture {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
 @media (max-width: 1200px) {
     .main__sites-item.image-corr img {
         max-height: 32px;

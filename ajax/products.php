@@ -6,6 +6,7 @@
     $filter = ['IBLOCK_ID' => 48];
 
     if ($_POST['cat']) $filter['UF_CAT'] = $_POST['cat'];
+    if ($_POST['search-string']) $filter['%NAME'] = $_POST['search-string'];
 
     $sort = ['NAME' => "ASC"];
     $sorts = [
@@ -17,7 +18,7 @@
         ['UF_PRICEFILTER', 'DESC']
     ];
 
-    if (isset($_COOKIE['sort-filter'])) {
+    if (isset($_COOKIE['sort-filter']) && !$_POST['search-string']) {
         $sort = [];
         $sort[$sorts[$_COOKIE['sort-filter']][0]] = $sorts[$_COOKIE['sort-filter']][1];
     }
@@ -43,7 +44,9 @@
         ?>
         <div class="catalog__item">
             <div class="img">
-                <img src="<?=CFile::GetPath($elem['PICTURE'])?>" alt="<?=$elem['NAME']?>">
+                <?php if ($elem['PICTURE']) : ?>
+                    <img src="<?=CFile::GetPath($elem['PICTURE'])?>" alt="<?=$elem['NAME']?>">
+                <?php endif; ?>
             </div>
             <div class="text">
                 <h4 class="text_fz20 text_fw600 text_upper"><?=$elem['NAME']?></h4>

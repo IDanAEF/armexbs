@@ -193,7 +193,7 @@
             margin-right: 8px
             width: 12px
             height: 12px
-    input 
+    input, .form-list__head
         padding: 11px 15px
     .button, button 
         padding: 10px 35px
@@ -228,6 +228,10 @@
             &-cases 
                 span 
                     height: 110px
+    .error404
+        &__content
+            h1 
+                font-size: 180px
     .gallery
         &__overlay
             &-arrow 
@@ -473,6 +477,11 @@
                 max-width: 370px
             h2 
                 max-width: 440px
+            &.small 
+                h2 
+                    max-width: 375px
+                img 
+                    max-width: 244px
     .footer
         padding: 30px 0px
         &__top 
@@ -493,7 +502,7 @@
                 height: 63px
                 padding: 6px 2px
         &__menu 
-            margin-bottom: 30px
+            margin-bottom: 30px !important
             &-under
                 margin-top: 10px 
                 li 
@@ -824,6 +833,10 @@
                 position: static
                 transform: none
                 margin-bottom: 30px
+            &.small 
+                img 
+                    margin-bottom: 0 
+                    margin-top: 30px
     .main 
         &__block 
             .button 
@@ -877,7 +890,7 @@
                     margin: 20px 0px 0px
     .footer
         &__menu 
-            margin-bottom: 20px
+            margin-bottom: 20px !important
         &__top 
             grid-template: auto / repeat(2,1fr)
         &__dop 
@@ -900,6 +913,9 @@
                 font-size: 40px
     .page-h1 
         margin-bottom: 40px
+    .global-load
+        width: 33px
+        height: 33px
     .default-text 
         h2, h3, h4, h5, h6 
             margin-bottom: 15px
@@ -918,6 +934,12 @@
                 margin-bottom: 10px
     textarea
         height: 122px
+    .form-list
+        &__items 
+            max-height: 208px
+            span 
+                padding: 8px 5px
+                font-size: 14px
     table 
         tr 
             td 
@@ -941,6 +963,11 @@
                     svg 
                         width: 20px
                         margin-right: 10px
+    .error404
+        &__content
+            h1 
+                font-size: 140px
+                margin-bottom: 10px
     .structure 
         &__main 
             svg 
@@ -1247,6 +1274,13 @@
         button 
             margin-left: 0
             margin-top: 20px
+    .form-list
+        &__head 
+            span 
+                font-size: 14px
+                white-space: nowrap
+                width: 90%
+                overflow: hidden
     .header
         &__logo 
             width: 150px
@@ -1621,7 +1655,7 @@
                 padding: 30px 10px 40px
                 width: calc(100% - 24px)
             img 
-                max-width: 246px
+                max-width: 246px !important
             h2 
                 font-size: 24px
                 text-align: left

@@ -1,5 +1,6 @@
 <?php
     require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+    $APPLICATION->SetPageProperty("description", "");
     $APPLICATION->SetPageProperty("title", "Армекс - 1С:ГРМ");
     $APPLICATION->SetTitle("Армекс - 1С:ГРМ");
 ?>
@@ -7,7 +8,7 @@
     <div class="breadcrumbs line text_fz18 text_upper">
         <div class="container">
             <a href="/">Главная</a>
-            <img src="<?=$imgPath?>arrow-right.svg" alt="">
+            <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
             <span>1С:ГРМ</span>
         </div>
     </div>
@@ -21,22 +22,22 @@
     <section class="grm__points main__block text_fz20 text_center">
         <div class="container">
             <div class="grm__point">
-                <img src="<?=$beforePath?>points/point1.png" alt="">
+                <img src="<?=$beforePath?>points/point1.png" alt="Это просто">
                 <span class="text_fw500">Это просто</span>
                 Легкая и быстрая регистрация в сервисе
             </div>
             <div class="grm__point">
-                <img src="<?=$beforePath?>points/point2.png" alt="">
+                <img src="<?=$beforePath?>points/point2.png" alt="Это надежно">
                 <span class="text_fw500">Это надежно</span>
                 Решение для максимальной скорости и безопасности
             </div>
             <div class="grm__point">
-                <img src="<?=$beforePath?>points/point3.png" alt="">
+                <img src="<?=$beforePath?>points/point3.png" alt="Это удобно">
                 <span class="text_fw500">Это удобно</span>
                 Работайте в 1С в любом месте и в любое время
             </div>
             <div class="grm__point">
-                <img src="<?=$beforePath?>points/point4.png" alt="">
+                <img src="<?=$beforePath?>points/point4.png" alt="Это выгодно">
                 <span class="text_fw500">Это выгодно</span>
                 Платите только за подключенные продукты
             </div>
@@ -135,7 +136,7 @@
                         </svg>
                         Условия предоставления
                     </span>
-                    <img src="<?=$imgPath?>arrow-down-light.svg" alt="">
+                    <img src="<?=$imgPath?>arrow-down-light.svg" alt="arrow-down-light">
                 </div>
                 <div class="fresh__programs-body sitemaps__row-sub">
                     <div class="fresh__programs-row sitemaps__row">
