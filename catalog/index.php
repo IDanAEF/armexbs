@@ -77,6 +77,7 @@
             <div class="catalog__filter-control">
                 <?php
                     $sorts = [
+                        ['По умолчанию', 'SORT', 'ASC'],
                         ['Названия (А-Я)', 'NAME', 'ASC'],
                         ['Названия (Я-А)', 'NAME', 'DESC'],
                         ['По популярности (возрастание)', 'UF_POPULAR', 'ASC'],
@@ -97,7 +98,7 @@
                         <path d="M7.93526 9.00005C7.63029 9.00058 7.32823 8.94084 7.04643 8.82425C6.76463 8.70767 6.50864 8.53653 6.29319 8.3207L0.146484 2.17283L1.78855 0.530762L7.93526 6.67747L14.082 0.530762L15.724 2.17283L9.57732 8.31954C9.36197 8.53558 9.10603 8.70693 8.82422 8.82371C8.54242 8.9405 8.24031 9.00043 7.93526 9.00005Z" fill="#1A1A1A"/>
                     </svg>
                 </div>
-                <ul class="catalog__filter-list body-click-content text_fz18 text_fw300" data-content="filter-list2" id="sort-filter">
+                <ul class="catalog__filter-list right body-click-content text_fz18 text_fw300" data-content="filter-list2" id="sort-filter">
                     <?php
                         foreach($sorts as $key => $sort) {
                             ?>

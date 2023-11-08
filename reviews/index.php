@@ -50,7 +50,7 @@
                 while ($review = $reviews->Fetch()) {
                     $client = CIBlockElement::GetList([], ['IBLOCK_ID' => 52, 'ID' => $review['PROPERTY_CLIENT_VALUE']], false, false, ['NAME', 'PREVIEW_PICTURE'])->Fetch();
                     ?>
-                    <div class="reviews__list-item text_fz18">
+                    <div class="reviews__list-item text_fz18" id="review<?=$review['ID']?>">
                         <div class="reviews__list-item-title">
                             <img src="<?=CFile::GetPath($client['PREVIEW_PICTURE'])?>" alt="<?=$client['NAME']?>">
                             <span class="text_fz16 text_fw300">

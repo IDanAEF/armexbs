@@ -21,10 +21,17 @@
             <div class="contacts__main">
                 <div class="contacts__info text_fz20 text_ffIBM">
                     <?php if ($contacts['phone']) : ?>
-                        <a href="tel:<?=str_replace(['(', ')', '-', ' '], '', $contacts['phone'])?>">
+                        <span>
                             <img src="<?=$imgPath?>phone-red.svg" alt="Телефон">
-                            <?=$contacts['phone']?>
-                        </a>
+                            <span>
+                                <a href="tel:<?=str_replace(['(', ')', '-', ' '], '', $contacts['phone'])?>">
+                                    <?=$contacts['phone']?>
+                                </a>
+                                <span class="btn text_fz14 text_underline body-click-target" data-content="feedback-modal">
+                                    Заказать звонок
+                                </span>
+                            </span>
+                        </span>
                     <?php endif; ?>
                     <?php if ($contacts['email']) : ?>
                         <a href="mailto:<?=$contacts['email']?>">
@@ -46,14 +53,17 @@
                     <?php endif; ?>
                 </div>
                 <div class="contacts__social">
+                    <div class="contacts__social-footer">
+                        <h3 class="text_fz20 text_fw600 text_upper">связаться с нами</h3>
+                        <div class="footer__speak text_fz14">
+                            <?php $APPLICATION->IncludeFile(SITE_DIR."include/footer-speak.php", [], ["MODE" => "html"]) ?>
+                        </div>
+                    </div>
                     <div class="contacts__social-links">
                         <h3 class="text_fz20 text_fw600 text_upper">Наши соцсети</h3>
                         <div class="contacts__social-items">
                             <?php $APPLICATION->IncludeFile(SITE_DIR."include/contacts-social.php", [], ["MODE" => "html"]) ?>
                         </div>
-                    </div>
-                    <div class="footer__speak text_fz14">
-                        <?php $APPLICATION->IncludeFile(SITE_DIR."include/footer-speak.php", [], ["MODE" => "html"]) ?>
                     </div>
                 </div>
                 <?php if ($contacts['tech-phone'] || $contacts['tech-mail'] || $contacts['tech-skype-name'] || $contacts['tech-helpdesk']) : ?>
@@ -78,7 +88,10 @@
                         </a>
                     <?php endif; ?>
                     <?php if ($contacts['tech-helpdesk']) : ?>
-                        <a href="<?=$contacts['tech-helpdesk']?>" target="_blank" class="text_underline">Вход в центр поддержки Helpdesk</a>
+                        <a href="<?=$contacts['tech-helpdesk']?>" target="_blank" class="text_underline">
+                            <img src="<?=$imgPath?>user.svg" alt="Helpdesk">
+                            Вход в центр поддержки Helpdesk
+                        </a>
                     <?php endif; ?>
                 </div>
                 <?php endif; ?>

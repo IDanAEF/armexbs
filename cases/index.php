@@ -18,7 +18,7 @@
             ['IBLOCK_ID' => 49],
             false,
             false,
-            ['ID', 'PREVIEW_PICTURE', 'PROPERTY_CLIENT']
+            ['ID', 'CODE', 'PREVIEW_PICTURE', 'PROPERTY_CLIENT']
         );
     ?>
     <section class="cases__main main__block block-top">
@@ -42,7 +42,7 @@
                                     <img src="<?=CFile::GetPath($client['PREVIEW_PICTURE'])?>" alt="<?=$client['NAME']?>">
                                 <?php endif; ?>
                                 <span class="text_fz20 text_fw600"><?=$client['NAME']?></span>
-                                <a href="/cases/case<?=$case['ID']?>/" class="button text_fz20">
+                                <a href="/cases/<?=$case['CODE']?>/" class="button text_fz20">
                                     Подробнее
                                     <img src="<?=$imgPath?>arrow-right.svg" alt="arrow-right">
                                 </a>

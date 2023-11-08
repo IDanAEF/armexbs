@@ -1,4 +1,4 @@
-<a href="https://t.me/polytm" target="_blank">
+<a href="https://t.me/TG1CPoly_bot" target="_blank">
     <img src="<?=SITE_TEMPLATE_PATH?>/assets/images/telegram-big.svg" alt="telegram">
 </a>
 <a href="https://www.youtube.com/channel/UCJPJHFDssuNVJk-ahLNRccQ" target="_blank">

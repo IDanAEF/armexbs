@@ -7,6 +7,6 @@
 <a href="https://www.youtube.com/channel/UCJPJHFDssuNVJk-ahLNRccQ" target="_blank" class="social__item">
     <img src="<?=SITE_TEMPLATE_PATH?>/assets/images/youtube.svg" alt="YouTube">
 </a>
-<a href="https://t.me/polytm" target="_blank" class="social__item">
+<a href="https://t.me/TG1CPoly_bot" target="_blank" class="social__item">
     <img src="<?=SITE_TEMPLATE_PATH?>/assets/images/telegram.svg" alt="Telegram">
 </a>

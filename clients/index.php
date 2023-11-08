@@ -45,11 +45,20 @@
                 <?php
                     while ($client = $clients->Fetch()) {
                         ?>
-                        <a href="<?=$client['PROPERTY_WEBSITE_VALUE']?>" target="_blank" class="clients__item">
+                        <?php if ($client['PROPERTY_WEBSITE_VALUE']) : ?>
+                        <a href="<?=strpos($client['PROPERTY_WEBSITE_VALUE'], 'http') === false ? 'http://'.$client['PROPERTY_WEBSITE_VALUE'] : $client['PROPERTY_WEBSITE_VALUE']?>" target="_blank" class="clients__item">
+                        <?php else : ?>
+                        <div class="clients__item">
+                        <?php endif; ?>
                             <img src="<?=CFile::GetPath($client['PREVIEW_PICTURE'])?>" alt="<?=$client['NAME']?>">
                             <h3 class="text_fz20 text_fw600"><?=$client['NAME']?></h3>
                             <?=$client['PREVIEW_TEXT']?>
+                        
+                        <?php if ($client['PROPERTY_WEBSITE_VALUE']) : ?>
                         </a>
+                        <?php else : ?>
+                        </div>
+                        <?php endif; ?>
                         <?php
                     }
                 ?>

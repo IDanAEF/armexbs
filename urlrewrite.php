@@ -10,16 +10,16 @@ $arUrlRewrite=array (
   ),
   4 => 
   array (
-    'CONDITION' => '#^\\/catalog\\/product(.*)\\/?#',
-    'RULE' => 'productId=$1',
+    'CONDITION' => '#^\\/catalog\\/(.*)\\/?#',
+    'RULE' => 'productCode=$1',
     'ID' => '',
     'PATH' => '/catalog/product.php',
     'SORT' => 100,
   ),
   5 => 
   array (
-    'CONDITION' => '#^\\/cases\\/case(.*)\\/?#',
-    'RULE' => 'caseId=$1',
+    'CONDITION' => '#^\\/cases\\/(.*)\\/?#',
+    'RULE' => 'caseCode=$1',
     'ID' => '',
     'PATH' => '/cases/state.php',
     'SORT' => 100,

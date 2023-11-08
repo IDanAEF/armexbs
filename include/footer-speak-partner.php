@@ -6,7 +6,7 @@
     <img src="<?=SITE_TEMPLATE_PATH?>/assets/images/telegram-static.svg" alt="Telegram">
     Telegram
 </a>
-<a href="viber://chat?number=79858195517" target="_blank" class="footer__speak-item">
-    <img src="<?=SITE_TEMPLATE_PATH?>/assets/images/viber.svg" alt="Viber">
-    Viber
+<a href="https://join.skype.com/invite/diCzxMjPi63M" target="_blank" class="footer__speak-item">
+    <img src="<?=SITE_TEMPLATE_PATH?>/assets/images/skype-static.svg" alt="Skype">
+    Skype
 </a>

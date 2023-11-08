@@ -8,8 +8,9 @@
     if ($_POST['cat']) $filter['UF_CAT'] = $_POST['cat'];
     if ($_POST['search-string']) $filter['%NAME'] = $_POST['search-string'];
 
-    $sort = ['NAME' => "ASC"];
+    $sort = ["SORT" => "ASC"];
     $sorts = [
+        ["SORT", "ASC"],
         ['NAME', 'ASC'],
         ['NAME', 'DESC'],
         ['UF_POPULAR', 'ASC'],
@@ -29,6 +30,7 @@
         false,
         [
             'ID',
+            'CODE',
             'NAME',
             'PICTURE',
             'DESCRIPTION',
@@ -51,7 +53,7 @@
             <div class="text">
                 <h4 class="text_fz20 text_fw600 text_upper"><?=$elem['NAME']?></h4>
                 <span class="text_upper"><?=$elem['UF_PRICE']?></span>
-                <a href="/catalog/product<?=$elem['ID']?>/" class="button">Подробнее</a>
+                <a href="/catalog/<?=$elem['CODE']?>/" class="button">Подробнее</a>
             </div>
         </div>
         <?php

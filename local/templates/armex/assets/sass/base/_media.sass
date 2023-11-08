@@ -155,7 +155,10 @@
         &__dop 
             &-item 
                 margin-right: 20px
-@media (max-width: 1200px) 
+@media (max-width: 1200px), (max-height: 730px)
+    .modal 
+        padding: 30px
+@media (max-width: 1200px)
     .container
         max-width: 960px
     main 
@@ -482,6 +485,11 @@
                     max-width: 375px
                 img 
                     max-width: 244px
+                &.with-btn 
+                    img 
+                        max-width: 340px
+                    .button 
+                        margin-top: 15px !important
     .footer
         padding: 30px 0px
         &__top 
@@ -917,6 +925,8 @@
         width: 33px
         height: 33px
     .default-text 
+        table 
+            width: 100%
         h2, h3, h4, h5, h6 
             margin-bottom: 15px
         h2
@@ -1139,6 +1149,9 @@
     .catalog
         &__items 
             grid-template: auto / 1fr 1fr
+        &__filter 
+            &-control 
+                min-width: 250px
     .product
         &__promo 
             &-image 
@@ -1665,6 +1678,7 @@
             &-control 
                 // width: auto
                 position: static
+                min-width: unset
             &-list 
                 width: calc(100% - 24px)
                 left: 50%

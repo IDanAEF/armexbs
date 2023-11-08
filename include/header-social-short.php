@@ -1,2 +1,2 @@
-<a href="https://t.me/polytm" target="_blank"><img src="<?=SITE_TEMPLATE_PATH?>/assets/images/telegram-red.svg" alt="Telegram"></a>
+<a href="https://t.me/TG1CPoly_bot" target="_blank"><img src="<?=SITE_TEMPLATE_PATH?>/assets/images/telegram-red.svg" alt="Telegram"></a>
 <a href="https://api.whatsapp.com/send/?phone=79858195517" target="_blank"><img src="<?=SITE_TEMPLATE_PATH?>/assets/images/whatsapp-red.svg" alt="WhatsApp"></a>

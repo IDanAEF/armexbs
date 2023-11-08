@@ -47,7 +47,6 @@
             Приобретая у нас продукты 1С, вы можете получить в подарок сертификаты самых известных и популярных магазинов или бонусные часы работы наших специалистов
         </div>
     </section>
-    <?php $APPLICATION->IncludeFile(SITE_DIR."include/usage.php", [], ["MODE" => "html"]) ?>
     <section class="gifts__parts main__block half">
         <div class="container">
             <div class="gifts__parts-col text_fz18">
@@ -150,6 +149,7 @@
             </div>
         </div>
     </section>
+    <?php $APPLICATION->IncludeFile(SITE_DIR."include/usage.php", [], ["MODE" => "html"]) ?>
     <section class="gifts__clients main__block">
         <div class="container">
             <div class="gifts__clients-col">

@@ -1,18 +1,31 @@
 <?php
     require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
-    $prodId = str_replace('/', '', $_GET['productId']);
+    $prodCode = str_replace('/', '', $_GET['productCode']);
 
     $product = CIBlockSection::GetList(
         [],
-        ['IBLOCK_ID' => 48, 'ID' => $prodId],
+        ['IBLOCK_ID' => 48, 'CODE' => $prodCode],
         false,
         [
-            'NAME', 'DETAIL_PICTURE', 'DESCRIPTION',
+            'ID', 'NAME', 'DETAIL_PICTURE', 'DESCRIPTION',
             'UF_PRICE', 'UF_CLIENT', 'UF_PREVIEW'
         ],
         []
     )->Fetch();
+
+    if (!$product) {
+        if (!defined("ERROR_404")) define("ERROR_404", "Y");
+
+        \CHTTP::setStatus("404 Not Found");
+        
+        if ($APPLICATION->RestartWorkarea()) {
+            require(\Bitrix\Main\Application::getDocumentRoot()."/404.php");
+            die();
+        }
+    }
+
+    $prodId = $product['ID'];
 
     $variants = CIBlockElement::GetList(
         ["SORT"=>"ASC"],
@@ -63,14 +76,14 @@
     </section>
     <?php $APPLICATION->IncludeFile(SITE_DIR."include/usage.php", [], ["MODE" => "html"]) ?>
     <section class="product__banner small main__block">
-        <div class="container">
+        <a href="/gifts/" class="container">
             <h2 class="text_fz36 text_fw600 text_white text_upper">Приобретайте продукты — получайте подарки</h2>
             <picture>
                 <source srcset="<?=$beforePath?>product-banner-mobile.png" media="(max-width: 576px)" />
                 <img src="<?=$beforePath?>product-banner.png" alt="Приобретайте продукты — получайте подарки">
             </picture>
             <!-- <a href="/gifts/" class="button text_fz24 text_fw700">Подробнее</a> -->
-        </div>
+        </a>
     </section>
     <section class="product__parts text_fz20 text_fw700">
         <div class="container">
@@ -89,7 +102,7 @@
     <section class="product__descr main__block half" id="descr">
         <div class="container">
             <h2 class="text_fz36 text_fw400">Описание</h2>
-            <div class="product__descr-text text_fz20 text_fw300">
+            <div class="product__descr-text text_fz20 text_fw300 default-text">
                 <?=$product['DESCRIPTION']?>
             </div>
         </div>

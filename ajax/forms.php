@@ -11,7 +11,9 @@
         'feedcomment' => 'Комментарий',
         'feedproduct' => 'Товар',
         'feedproductid' => 'ID товара',
-        'feedversion' => 'Версия товара'
+        'feedversion' => 'Версия товара',
+        'feeddemos' => 'Демоверсия 1С',
+        'feedurl' => 'На какой странице заполнена форма'
     ];
 
     $body = '';
@@ -28,6 +30,26 @@
         "ACTIVE" => "Y",
     );
     $elemId = $el->Add($arProps);
+
+    if ($_POST['feedproductid']) {
+        $sectionProduct = CIBlockSection::GetList(
+            ["SORT" => "ASC"],
+            ['IBLOCK_ID' => 48, 'ID' => $_POST['feedproductid'], 'UF_POPULARFIX' => 0],
+            false,
+            ['UF_POPULAR'],
+            false
+        )->Fetch();
+
+        if ($sectionProduct) {
+            $count = (int)$sectionProduct['UF_POPULAR'] + 1;
+
+            $bs = new CIBlockSection;
+            $arFields = Array(
+                'UF_POPULAR' => $count
+            );
+            $res = $bs->Update($_POST['feedproductid'], $arFields);
+        }
+    }
 
     $eventFields = [];
     $eventFields['FEEDELEM'] = $elemId;

@@ -9,18 +9,28 @@
         <input type="text" name="feedevent" value="33" hidden>
         <input type="text" name="feedtheme" value="<?=$title?>" hidden>
         <input type="text" name="feedurl" value="<?=$_SERVER['HTTP_HOST']?><?=$_SERVER['REQUEST_URI']?>" hidden>
-        <div class="main__feedback-form-col">
-            <span class="text_fw700">Имя</span>
-            <input type="text" placeholder="Иван Иванов" name="feedname" required>
-        </div>
+        <?php if (!$comment) : ?>
+            <div class="main__feedback-form-col">
+                <span class="text_fw700">Имя</span>
+                <input type="text" placeholder="Иван Иванов" name="feedname" required>
+            </div>
+        <?php endif; ?>
+        <?php if ($comment) : ?>
+            <div class="main__feedback-form-col">
+                <span class="text_fw700">Комментарий</span>
+                <textarea name="feedcomment" required></textarea>
+            </div>
+        <?php endif; ?>
         <div class="main__feedback-form-col">
             <span class="text_fw700">Телефон</span>
             <input type="tel" placeholder="+7 (___) ___-__-__" name="feedphone" required>
         </div>
-        <div class="main__feedback-form-col">
-            <span class="text_fw700">Email</span>
-            <input type="email" placeholder="email@mail.com" name="feedmail" required>
-        </div>
+        <?php if (!$comment) : ?>
+            <div class="main__feedback-form-col">
+                <span class="text_fw700">Email</span>
+                <input type="email" placeholder="email@mail.com" name="feedmail" required>
+            </div>
+        <?php endif; ?>
         <?php if ($listName && $items) : ?>
             <div class="main__feedback-form-col">
                 <span class="text_fw700"><?=$listTitle?></span>
@@ -28,7 +38,7 @@
                     <input type="text" name="<?=$listName?>" value="<?=$items[0]?>" hidden>
                     <div class="form-list__head">
                         <span class="text_fz18 text_fw300"><?=$items[0]?></span>
-                        <img src="<?=$imgPath?>arrow-down-red.svg" alt="">
+                        <img src="<?=SITE_TEMPLATE_PATH?>/assets/images/arrow-down-red.svg" alt="">
                     </div>
                     <div class="form-list__items text_fz18">
                         <?php

@@ -70,7 +70,7 @@
                             $outMenu = [];
                             $mainMenu = CIBlockSection::GetTreeList(
                                 ['IBLOCK_ID' => 47],
-                                ['ID', 'NAME', 'CODE', 'DEPTH_LEVEL', 'UF_MOBILE']
+                                ['ID', 'NAME', 'CODE', 'DEPTH_LEVEL', 'UF_MOBILE', 'UF_SHOWMOB']
                             );
 
                             $lastId = '';
@@ -80,6 +80,7 @@
                                     $outMenu[$point['ID']] = [
                                         'code' => $point['CODE'],
                                         'name' => $point['NAME'],
+                                        'showmob' => $point['UF_SHOWMOB'],
                                         'mobile' => $point['UF_MOBILE']
                                     ];
 
@@ -87,14 +88,15 @@
                                 } else {
                                     $outMenu[$lastId]['sub'][$point['ID']] = [
                                         'code' => $point['CODE'],
-                                        'name' => $point['NAME']
+                                        'name' => $point['NAME'],
+                                        'showmob' => $point['UF_SHOWMOB']
                                     ];
                                 }
                             }
 
                             foreach($outMenu as $point) {
                                 ?>
-                                <li <?=$point['sub'] ? ' class="menu-item-has-children'.($point['mobile'] ? ' only-mobile' : '').'"' : ''?>>
+                                <li <?=$point['sub'] ? ' class="menu-item-has-children'.($point['showmob'] ? ' show-on-mobile' : '').($point['mobile'] ? ' only-mobile' : '').'"' : ''?>>
                                     <a href="/<?=$point['code']?>/">
                                         <?=$point['name']?>
                                         <?php if ($point['sub']) : ?>
@@ -106,9 +108,16 @@
                                     <?php if ($point['sub']) : ?>
                                     <ul class="sub-menu text_fz18 text_fw300">
                                         <?php
+                                            if ($point['code'] == 'catalog') {
+                                                ?>
+                                                <li class="show-on-mobile"><a href="/catalog/">Весь каталог</a></li>
+                                                <?php
+                                            }
+                                        ?>
+                                        <?php
                                             foreach($point['sub'] as $subId => $sub) {
                                                 ?>
-                                                <li><a href="/<?=$point['code'] == 'catalog' ? 'catalog/?cat='.$subId : $sub['code']?>/"><?=$sub['name']?></a></li>
+                                                <li <?=($sub['showmob'] ? 'class="show-on-mobile"' : '')?>><a href="/<?=$point['code'] == 'catalog' ? 'catalog/?cat='.$subId : $sub['code']?>/"><?=$sub['name']?></a></li>
                                                 <?php
                                             }
                                         ?>

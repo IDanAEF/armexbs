@@ -93,8 +93,8 @@ const slider = () => {
                 }
             });
 
-            sliderRight.addEventListener('click', moveRight);
-            sliderLeft.addEventListener('click', moveLeft);
+            sliderRight && sliderRight.addEventListener('click', moveRight);
+            sliderLeft && sliderLeft.addEventListener('click', moveLeft);
 
             window.addEventListener("resize", () => {
                 setSlideWidth();

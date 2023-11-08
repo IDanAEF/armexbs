@@ -5,7 +5,7 @@ const scrolling = () => {
 
         const goingTo = (hash) => {
             let widthTop = document.documentElement.scrollTop,
-                toBlock = document.querySelector(hash).getBoundingClientRect().top - 110,
+                toBlock = document.querySelector(hash).getBoundingClientRect().top - 150,
                 start = null;
 
             requestAnimationFrame(step);
@@ -23,7 +23,7 @@ const scrolling = () => {
                 if (r != widthTop + toBlock) {
                     requestAnimationFrame(step);
                 } else {
-                    location.hash = hash;
+                    //location.hash = hash;
                 }
             }
         }

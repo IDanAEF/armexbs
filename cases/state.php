@@ -1,19 +1,32 @@
 <?php
     require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
-    $caseId = str_replace('/', '', $_GET['caseId']);
+    $caseCode = str_replace('/', '', $_GET['caseCode']);
 
     $case = CIBlockElement::GetList(
         [],
-        ['IBLOCK_ID' => 49, 'ID' => $caseId],
+        ['IBLOCK_ID' => 49, 'CODE' => $caseCode],
         false,
         false,
         [
-            'NAME', 'PREVIEW_PICTURE', 'PREVIEW_TEXT', 'DETAIL_TEXT',
+            'ID', 'NAME', 'PREVIEW_PICTURE', 'PREVIEW_TEXT', 'DETAIL_TEXT',
             'PROPERTY_FIRST_TEXT', 'PROPERTY_COMMENT', 'PROPERTY_CLIENT',
             'PROPERTY_COMMENT_AUTHOR'
         ]
     )->Fetch();
+
+    if (!$case) {
+        if (!defined("ERROR_404")) define("ERROR_404", "Y");
+
+        \CHTTP::setStatus("404 Not Found");
+        
+        if ($APPLICATION->RestartWorkarea()) {
+            require(\Bitrix\Main\Application::getDocumentRoot()."/404.php");
+            die();
+        }
+    }
+
+    $caseId = $case['ID'];
 
     $client = '';
     if ($case['PROPERTY_CLIENT_VALUE']) {
@@ -41,6 +54,30 @@
 
     while($image = $imagesClass->Fetch()) {
         $images[] = CFile::GetPath($image['VALUE']);
+    }
+
+    $phones = [];
+    $phonesClass = CIBlockElement::GetProperty(
+        52,
+        $case['PROPERTY_CLIENT_VALUE'],
+        [],
+        ['CODE' => 'PHONE']
+    );
+
+    while($phone = $phonesClass->Fetch()) {
+        $nums = [];
+        $numString = $phone['VALUE'];
+        $tit = "Телефон";
+
+        if (strpos($phone['VALUE'], '::') !== false) {
+            $tit = preg_replace('/ \:\: .*/', '', $phone['VALUE']);
+            $numString = preg_replace('/.* \:\: /', '', $phone['VALUE']);
+        }
+
+        if (strpos($numString, ',') === false) $nums[] = $numString;
+        else $nums = explode(',', $numString);
+
+        $phones[] = [$tit, $nums];
     }
 
     $stateName = $case['NAME'];
@@ -72,9 +109,11 @@
                 <div class="state__images">
                     <?php
                         foreach($images as $img) {
-                            ?>
-                            <img src="<?=$img?>" alt="<?=$stateName?>">
-                            <?php
+                            if ($img) {
+                                ?>
+                                <img src="<?=$img?>" alt="<?=str_replace('"', '', $stateName)?>">
+                                <?php
+                            }
                         }
                     ?>
                 </div>
@@ -111,16 +150,29 @@
                         <b>Контактная информация:</b>
                         <div class="state__company-rows">
                             <?php if ($client['PROPERTY_ADDRESS_VALUE']) : ?>
-                                <span><?=$client['PROPERTY_ADDRESS_VALUE']?></span>
+                                <div><?=$client['PROPERTY_ADDRESS_VALUE']?></div>
                             <?php endif; ?>
                             <?php if ($client['PROPERTY_EMAIL_VALUE']) : ?>
-                                <span>E-mail: <a href="mailto:<?=$client['PROPERTY_EMAIL_VALUE']?>"><?=$client['PROPERTY_EMAIL_VALUE']?></a></span>
+                                <div>E-mail: <span><a href="mailto:<?=$client['PROPERTY_EMAIL_VALUE']?>"><?=$client['PROPERTY_EMAIL_VALUE']?></a></span></div>
                             <?php endif; ?>
-                            <?php if ($client['PROPERTY_PHONE_VALUE']) : ?>
-                                <span>Телефон: <a href="tel:<?=str_replace(['(', ')', '-', ' '], '', $client['PROPERTY_PHONE_VALUE'])?>"><?=$client['PROPERTY_PHONE_VALUE']?></a></span>
-                            <?php endif; ?>
+                            <?php foreach ($phones as $elem) : ?>
+                                <div>
+                                    <?=$elem[0]?>: 
+                                    <span>
+                                        <?php
+                                            foreach($elem[1] as $index => $sing) {
+                                                $linkPhone = preg_replace('/\D/', '', str_replace(['(', ')', '-', ' ', '+'], '', $sing));
+                                                $isWhatsapp = mb_strtoupper($elem[0]) == 'WHATSAPP';
+                                                ?>
+                                                <a href="<?=($isWhatsapp ? 'https://api.whatsapp.com/send/?phone='.$linkPhone : 'tel:'.$linkPhone)?>"<?=$isWhatsapp ? ' target="_blank"' : ''?>><?=trim($sing)?></a><?=$index !== count($elem[1]) - 1 ? ', ' : ''?>
+                                                <?php
+                                            }
+                                        ?>
+                                    </span>
+                                </div>
+                            <?php endforeach; ?>
                             <?php if ($client['PROPERTY_WEBSITE_VALUE']) : ?>
-                                <span>Веб-сайт: <a href="<?=$client['PROPERTY_WEBSITE_VALUE']?>" target="_blank"><?=$client['PROPERTY_WEBSITE_VALUE']?></a></span>
+                                <div>Веб-сайт: <span><a href="<?=strpos($client['PROPERTY_WEBSITE_VALUE'], 'http') !== false ? $client['PROPERTY_WEBSITE_VALUE'] : 'http://'.$client['PROPERTY_WEBSITE_VALUE']?>" target="_blank"><?=$client['PROPERTY_WEBSITE_VALUE']?></a></span></div>
                             <?php endif; ?>
                         </div>
                     </div>

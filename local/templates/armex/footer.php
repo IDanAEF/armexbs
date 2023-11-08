@@ -27,12 +27,12 @@
                     <div class="footer__menu">
                         <span class="footer__title text_fz20 text_fw600">попробуйте бесплатно</span>
                         <ul class="footer__menu-under text_fz18">
-                            <li><a href="/demo/">Демоверсии 1С</a></li>
-                            <li><a href="/fresh/">1С:Fresh</a></li>
-                            <li><a href="/rent/">Аренда 1С</a></li>
-                            <li><a href="/crm/">Битрикс24</a></li>
-                            <li><a href="/grm/">1С:ГРМ</a></li>
-                            <li><a href="/industr/">Демосервис отраслевых продуктов</a></li>
+                            <li><a href="/demoversii-1s/">Демоверсии 1С</a></li>
+                            <li><a href="/1s-fresh/">1С:Fresh</a></li>
+                            <li><a href="/arenda-1s/">Аренда 1С</a></li>
+                            <li><a href="/bitriks24/">Битрикс24</a></li>
+                            <li><a href="/1s-grm/">1С:ГРМ</a></li>
+                            <li><a href="/1s-dlya-vashey-otrasli/">Демосервис отраслевых продуктов</a></li>
                         </ul>
                     </div>
                 </div>
@@ -85,12 +85,12 @@
                     <div class="footer__menu">
                         <span class="footer__title text_fz20 text_fw600">попробуйте бесплатно</span>
                         <ul class="footer__menu-under text_fz18">
-                            <li><a href="/demo/">Демоверсии 1С</a></li>
-                            <li><a href="/fresh/">1С:Fresh</a></li>
-                            <li><a href="/rent/">Аренда 1С</a></li>
-                            <li><a href="/crm/">Битрикс24</a></li>
-                            <li><a href="/grm/">1С:ГРМ</a></li>
-                            <li><a href="/industr/">1С для вашей отрасли</a></li>
+                            <li><a href="/demoversii-1s/">Демоверсии 1С</a></li>
+                            <li><a href="/1s-fresh/">1С:Fresh</a></li>
+                            <li><a href="/arenda-1s/">Аренда 1С</a></li>
+                            <li><a href="/bitriks24/">Битрикс24</a></li>
+                            <li><a href="/1s-grm/">1С:ГРМ</a></li>
+                            <li><a href="/1s-dlya-vashey-otrasli/">1С для вашей отрасли</a></li>
                         </ul>
                     </div>
                 </div>
@@ -140,6 +140,7 @@
                             </div>
                         </div>
                         <a href="/privacy/" class="footer__dop-item">Политика конфиденциальности</a>
+                        <a href="/return/" class="footer__dop-item">Условия возврата</a>
                         <span class="footer__dop-item body-click-target" data-content="feedback-error">Сообщить об ошибке</span>
                     </div>
                     <a href="/" class="footer__logo-link">
@@ -230,35 +231,15 @@
             'section' => '175'
         ], ["MODE" => "php"]);
     ?>
-    <div class="feedback-modal modal body-click-content" data-content="feedback-error">
-        <span class="modal-close body-click-close"></span>
-        <div class="main__feedback-top">
-            <h2 class="text_fz32 text_fw400">Сообщить об ошибке</h2>
-        </div>
-        <form action="/ajax/forms.php" class="main__feedback-form text_fz18 text_fw300" data-success="error">
-            <input type="text" name="feedsection" value="174" hidden>
-            <input type="text" name="feedevent" value="33" hidden>
-            <input type="text" name="feedtheme" value="Сообщить об ошибке" hidden>
-            <input type="text" name="feedurl" value="<?=$_SERVER['HTTP_HOST']?><?=$_SERVER['REQUEST_URI']?>" hidden>
-            <div class="main__feedback-form-col">
-                <span class="text_fw700">Комментарий</span>
-                <textarea name="feedcomment" required></textarea>
-            </div>
-            <div class="main__feedback-form-col">
-                <span class="text_fw700">Телефон</span>
-                <input type="tel" placeholder="+7 (___) ___-__-__" name="feedphone" required>
-            </div>
-            <div class="main__feedback-form-col">
-                <button class="text_fz20">
-                    Отправить
-                    <img src="<?=SITE_TEMPLATE_PATH?>/assets/images/arrow-right.svg" alt="arrow">
-                </button>
-            </div>
-            <div class="main__feedback-form-col copy text_fz14 text_fw300">
-                Нажимая «Отправить», вы соглашаетесь с <a href="/privacy/" class="text_underline">политикой конфиденциальности</a>
-            </div>
-        </form>
-    </div>
+    <?php 
+        $APPLICATION->IncludeFile(SITE_DIR."include/default-form-modal.php", [
+            'title' => 'Сообщить об ошибке',
+            'success' => 'error',
+            'name' => 'feedback-error',
+            'section' => '174',
+            'comment' => true
+        ], ["MODE" => "php"]);
+    ?>
     <!-- Modals : End -->
 
 
